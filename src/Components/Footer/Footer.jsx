@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { Typewriter } from "react-simple-typewriter";
 
 const Footer = () => {
     return (
@@ -12,6 +13,14 @@ const Footer = () => {
                     month: 'long',
                     day: 'numeric'
                 })}
+                <br />
+                <span className="ml-2">
+                    {new Date().toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    })}
+                </span>
             </div>
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 {/* Logo / Name */}
@@ -19,21 +28,28 @@ const Footer = () => {
 
                 {/* Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium">
-                    <li className="hover:text-indigo-400 cursor-pointer transition">Home</li>
-                    <li className="hover:text-indigo-400 cursor-pointer transition">Projects</li>
-                    <li className="hover:text-indigo-400 cursor-pointer transition">About</li>
-                    <li className="hover:text-indigo-400 cursor-pointer transition">Contact</li>
+                    <h1 className="text-xl  font-bold ">
+                            <Typewriter
+                                words={['Welcome to visit ❤️‍🔥', 'Thank You', 'For Visit My Portfolio']}
+                                loop={0}
+                                cursor
+                                cursorStyle='|'
+                                typeSpeed={70}
+                                deleteSpeed={70}
+                                delaySpeed={2000}
+                            />
+                        </h1>
                 </ul>
 
                 {/* Social Icons */}
                 <div className="flex gap-4">
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/sajjadjim" target="_blank" rel="noopener noreferrer">
                         <Github className="hover:text-indigo-400 transition" />
                     </a>
-                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/sajjadjim/" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="hover:text-indigo-400 transition" />
                     </a>
-                    <a href="mailto:yourmail@example.com">
+                    <a href="mailto:sajjadjim15@gmail.com">
                         <Mail className="hover:text-indigo-400 transition" />
                     </a>
                 </div>
