@@ -1,9 +1,14 @@
 import React from 'react';
-
+import { motion } from 'framer-motion';
 
 const Section2 = () => {
   return (
-    <section className=" md:w-10/12 md:mx-auto py-12 px-6 md:px-16">
+    <motion.section className=" md:w-10/12 md:mx-auto py-12 px-6 md:px-16"
+      initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+    >
       <div className=" text-center">
         <div className='flex  w-10/12 mx-auto gap-5 md:gap-4 mb-6 '>
             <button className='md:py-6 px-5 font-bold  w-full  rounded-xl md:text-3xl bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-to-t from-sky-500 to-indigo-500 '>Coding Experience <br /> 2.5+ Years</button>
@@ -28,7 +33,7 @@ const Section2 = () => {
           eager to contribute and grow as a developer.
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

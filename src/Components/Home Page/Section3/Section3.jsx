@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import './style.css';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Section3() {
     const swiperRef = useRef(null);
@@ -13,7 +14,7 @@ export default function Section3() {
     const [selectedProject, setSelectedProject] = useState(null); // for modal
 
     useEffect(() => {
-        fetch('public/Project Data/project.json')
+        fetch('https://raw.githubusercontent.com/sajjadjim/sajjadjim/refs/heads/main/project.json')
             .then((response) => response.json())
             .then((data) => {
                 setProjectData(data);
@@ -21,8 +22,13 @@ export default function Section3() {
     }, []);
 
     return (
-        <div className="py-12 md:w-10/12 md:mx-auto px-4 text-center relative">
-            <h2 className="text-2xl md:text-6xl font-bold mb-5 text-left md:mb-10">
+        <motion.div className="py-12 md:w-10/12 md:mx-auto px-4 text-center relative"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+            <h2 className="text-2xl md:text-4xl font-bold mb-5 text-left md:mb-10">
                 Projects.
             </h2>
 
@@ -156,6 +162,6 @@ export default function Section3() {
                 </div>
             )}
 
-        </div>
+        </motion.div>
     );
 }

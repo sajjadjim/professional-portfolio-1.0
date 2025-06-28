@@ -1,41 +1,65 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, Code, User, Mail } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Define navbar items with label, path and icon
+  const navItems = [
+    { label: 'Home', to: '/', Icon: Home },
+    { label: 'Projects', to: '/project', Icon: Code },
+    { label: 'About', to: '/about', Icon: User },
+    { label: 'Contact', to: '/contact', Icon: Mail },
+  ];
+
+  const navbar = navItems.map(({ label, to, Icon }) => (
+    <Link
+      key={label}
+      to={to}
+      className="group flex items-center gap-1 hover:text-teal-500 transition relative font-medium"
+    >
+      {/* Text */}
+      {label}
+      {/* Icon hidden by default, shown on hover */}
+      <Icon 
+        size={16} 
+        className="opacity-0 group-hover:opacity-100 transition absolute right-[-20px]" 
+        aria-hidden="true"
+      />
+    </Link>
+  ));
+
   return (
-    <nav className="md:w-9/12 md:mx-auto w-full fixed top-0 left-0 right-0 z-50   shadow-md">
-      <div className=" flex justify-between items-center  py-3 md:py-4">
+    <nav className="md:w-9/12 md:mx-auto w-full fixed top-0 left-0 right-0 z-50 shadow-md ">
+      <div className="flex justify-between items-center py-3 md:py-4">
         {/* Logo */}
-        <div className="md:text-3xl text-2xl font-bold ">Sajjad JIM.</div>
+        <div className="md:text-3xl text-2xl font-bold cursor-pointer">Sajjad <span className='text-teal-700'>JIM.</span></div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8  font-medium">
-          <li className="hover:text-indigo-400 transition duration-300 cursor-pointer">About</li>
-          <li className="hover:text-indigo-400 transition duration-300 cursor-pointer">Projects</li>
-          <li className="hover:text-indigo-400 transition duration-300 cursor-pointer">Contact</li>
-          <li className="hover:text-indigo-400 transition duration-300 cursor-pointer">Blogs</li>
-        </ul>
+        <ul className="hidden md:flex gap-8">{navbar}</ul>
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} aria-label="Toggle menu">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden bg-white px-4 pb-4 shadow-md  font-medium space-y-3 animate-slide-down">
-          <li className="hover:text-indigo-400 transition">Home</li>
-          <li className="hover:text-indigo-400 transition">Projects</li>
-          <li className="hover:text-indigo-400 transition">About</li>
-          <li className="hover:text-indigo-400 transition">Contact</li>
+      {/* Mobile Menu with smoother, longer animation */}
+      <div
+        className={`
+          md:hidden overflow-hidden transition-all duration-1000
+          ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+        `}
+        style={{ willChange: 'max-height, opacity' }}
+      >
+        <ul className="px-4 pb-4 shadow-md justify-center align-center bg-black grid font-medium space-y-3">
+          {navbar}
         </ul>
-      )}
+      </div>
     </nav>
   );
 };
