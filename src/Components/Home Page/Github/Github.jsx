@@ -8,11 +8,11 @@ const Github = () => {
         >
             <h1 className='text-left md:text-4xl text-2xl py-5 relative md:right-55 font-bold'>Github states.</h1>
             <motion.div className="flex justify-center my-8"
-            initial={{ opacity: 1, x: 100 }}
+            initial={{ opacity: 1, x: 80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 2, delay: 0.2 }}
+            transition={{ duration: 2 }}
             viewport={{ once: true }}
-            
+            // , delay: 0.2
             >
                 <img
                     src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sajjadjim&theme=blue_green"
@@ -20,14 +20,12 @@ const Github = () => {
                     className="max-w-full h-auto"
                 />
             </motion.div>
-            <motion.div
-            initial={{ opacity: 1, x: -100 }}
+
+                <motion.img initial={{ opacity: 1, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
-            viewport={{ once: true }}
-            >
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=sajjadjim&custom_title=My%20Contribution%20Graph&bg_color=FFFFF&color=58A6FF&line=1F6FEB&point=FF6B6B&area=true&hide_border=true&border_radius=10" alt="GitHub Contribution Graph" style={{ width: "100%", maxWidth: "800px" }} />
-            </motion.div>
+            viewport={{ once: true }} src="https://github-readme-activity-graph.vercel.app/graph?username=sajjadjim&custom_title=My%20Contribution%20Graph&bg_color=FFFFF&color=58A6FF&line=1F6FEB&point=FF6B6B&area=true&hide_border=true&border_radius=10" alt="GitHub Contribution Graph" style={{ width: "100%", maxWidth: "800px" }} />
+            
         </div>
     );
 };
