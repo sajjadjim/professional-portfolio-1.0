@@ -24,7 +24,7 @@ export default function Section1() {
             {keywords.map((text, index) => (
                 <span
                     key={index}
-                    className="absolute text-gray-800 md:block none text-sm animate-float pointer-events-none"
+                    className="absolute text-gray-700 md:block none text-sm animate-float pointer-events-none"
                     style={{
                         top: `${Math.random() * 90}%`,
                         left: `${Math.random() * 90}%`,
