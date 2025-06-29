@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Footer = () => {
     return (
         <footer className="md:w-10/12 mx-auto    text-white py-8">
-            {/* Current Day and Date */}
+             {/* Current Day and Date  */}
             <div className="text-sm text-center my-5 text-gray-400">
                 {new Date().toLocaleDateString(undefined, {
                     weekday: 'long',
@@ -18,13 +18,14 @@ const Footer = () => {
                     {new Date().toLocaleTimeString(undefined, {
                         hour: '2-digit',
                         minute: '2-digit',
-                        second: '2-digit'
+                        second: '2-digit',
+                        hour12: true // This adds AM/PM
                     })}
                 </span>
             </div>
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 {/* Logo / Name */}
-                <div className="text-xl font-bold">Sajjad JIM.</div>
+                <div className="text-xl font-bold">Sajjad <span className='text-teal-700'>JIM.</span></div>
 
                 {/* Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium">

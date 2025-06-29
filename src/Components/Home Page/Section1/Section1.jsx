@@ -43,7 +43,7 @@ export default function Section1() {
                     <div className="flex gap-4 md:gap-4 md:flex-col text-xl self-center md:self-start">
                         <a href="https://www.facebook.com/sajjad.hossain.jim/"><FaFacebook className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                         <a href="https://www.linkedin.com/in/sajjadjim/"><FaLinkedin className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
-                        <a href="https://x.com/?lang=en"><FaXTwitter className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
+                        <a href="https://x.com/sajjad_jim15"><FaXTwitter className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                         <a href="https://github.com/sajjadjim"><FaGithub className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                     </div>
                     <div className="flex-1 space-y-4">

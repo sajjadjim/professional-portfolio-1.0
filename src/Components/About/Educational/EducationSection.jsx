@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css'
+import { motion } from 'framer-motion';
 import { RiDownloadLine } from "react-icons/ri";
 const educationData = [
   {
@@ -29,7 +30,12 @@ const educationData = [
 ];
 
 const EducationCard = ({ level, institution, degree, year, description, cgpa }) => (
-  <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-105 hover:shadow-teal-500 duration-300 border-t-4 border-teal-500">
+  <motion.div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-105 hover:shadow-teal-500 duration-300 border-t-4 border-teal-500"
+   initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+  >
     <div className="flex justify-between items-center mb-4">
       <h3 className="text-2xl font-bold text-teal-400 tracking-wide">{level}</h3>
       <span className="bg-black text-teal-300 px-3 py-1 rounded-full text-xs font-semibold shadow border border-teal-700">{year}</span>
@@ -39,7 +45,7 @@ const EducationCard = ({ level, institution, degree, year, description, cgpa }) 
     <p className="text-md text-teal-300 font-medium mb-3">{cgpa}</p>
     <div className="h-1 w-16 bg-gradient-to-r from-teal-400 to-blue-400 rounded mb-4"></div>
     <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
-  </div>
+  </motion.div>
 );
 
 const EducationSection = () => {
