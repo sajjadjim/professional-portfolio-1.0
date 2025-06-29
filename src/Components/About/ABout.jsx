@@ -3,7 +3,7 @@ import EducationSection from './Educational/EducationSection';
 
 const ABout = () => {
     useEffect(()=>{
-        document.title = "About Me";
+        document.title = "About";
     })
     return (
         <div  className='bg-black'>

@@ -4,11 +4,11 @@ import {
 } from "react-router";
 
 import { Component } from "react";
-import Home from "../Components/Home";
-import HomePage from "../HomePage";
 import ABout from "../Components/About/ABout";
 import ContactSection from "../Components/Contact/ContactSection";
 import Project from "../Components/Projects/Project";
+import Home from "../Home";
+import HomePage from "../Components/Home Page/HomePage";
 
 
 const router = createBrowserRouter([

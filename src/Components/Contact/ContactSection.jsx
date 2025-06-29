@@ -51,7 +51,7 @@ const contactInfo = [
 
 const ContactSection = () => {
   useEffect(()=>{
-    document.title = "Contact Me";
+    document.title = "Contact";
   })
   return (
     <section className="w-full h-screen bg-black flex flex-col justify-center items-center px-4">

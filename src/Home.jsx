@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import Navbar from './Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import { Outlet } from 'react-router';
-import Footer from './Footer/Footer';
+import Footer from './Components/Footer/Footer';
 
 const Home = () => {
     useEffect(()=>{
-        document.title = "Sajjad | JIM";
+        document.title = "Sajjad Hossain JIM";
     })
     return (
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
