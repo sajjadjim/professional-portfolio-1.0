@@ -30,7 +30,7 @@ const educationData = [
 ];
 
 const EducationCard = ({ level, institution, degree, year, description, cgpa }) => (
-  <motion.div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 shadow-2xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-105 hover:shadow-teal-500 duration-300 border-t-4 border-teal-500"
+  <motion.div className="bg-gradient-to-br from-gray-900 via-black border-t-5 border-r-2 to-gray-800 shadow-xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-102 hover:shadow-teal-800 duration-300  border-teal-500"
    initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -52,18 +52,18 @@ const EducationSection = () => {
   return (
     <section className=" md:w-9/12 mx-auto pt-20">
       <h1 className="md:text-6xl text-3xl font-bold text-center my-10 pacifico-regular">
-        <span className='text-teal-700 '>&lt;</span> I'm Sajjad JIM <span className='text-teal-700'>/&gt;</span>
+        <span className='text-teal-500 '>&lt;</span> I'm Sajjad JIM <span className='text-teal-500'>/&gt;</span>
       </h1>
 
       <div>
-        <p className='text-center md:text-xl text-xl text-teal-700 '>Hi I am Jim . I am a student of computer Science And Engineering at Daffodil International University . My biggest goal in my life is to be a kind person .I want to achieve success in every step of my life .I always want to hard work for myself , my family and my country .
+        <p className='text-center md:text-xl text-xl text-teal-500 '>Hi I am Jim . I am a student of computer Science And Engineering at Daffodil International University . My biggest goal in my life is to be a kind person .I want to achieve success in every step of my life .I always want to hard work for myself , my family and my country .
         </p>
         <div className='grid justify-center justify-items-center'>
           <a
             href="https://drive.google.com/file/d/19tnO4qI1dbdBmK908bddk1tbSJ85wPYX/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className='py-3 flex gap-2 items-center  bg-teal-700 font-bold text-white hover:text-teal-700 hover:border-[1px] hover:bg-white hover:border-teal-700 px-10 rounded-full my-5  cursor-pointer transition-colors duration-300'
+            className='py-3 flex gap-2 items-center  bg-teal-500 font-bold text-white hover:text-teal-500 hover:border-[1px] hover:bg-white hover:border-teal-700 px-10 rounded-full my-5  cursor-pointer transition-colors duration-300'
             download
           >
             CV <RiDownloadLine className='text-xl animate-bounce'></RiDownloadLine>

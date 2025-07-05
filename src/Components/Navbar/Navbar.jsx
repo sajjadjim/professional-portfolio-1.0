@@ -31,11 +31,16 @@ const Navbar = () => {
     </Link>
   ));
 
+  // Close mobile menu when a link is clicked (on small devices)
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) setIsOpen(false);
+  };
+
   return (
     <nav className="md:w-9/12 md:mx-auto w-full fixed top-0 left-0 right-0 z-50 shadow-md ">
       <div className="flex justify-between items-center py-3 md:py-4">
         {/* Logo */}
-        <div className="md:text-3xl text-2xl font-bold cursor-pointer">Sajjad <span className='text-teal-700'>JIM.</span></div>
+        <div className="md:text-3xl text-2xl font-bold cursor-pointer">Sajjad <span className='text-teal-600'>JIM.</span></div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8">{navbar}</ul>
@@ -57,7 +62,21 @@ const Navbar = () => {
         style={{ willChange: 'max-height, opacity' }}
       >
         <ul className="px-4 pb-4 shadow-md justify-center align-center bg-black grid font-medium space-y-3">
-          {navbar}
+          {navItems.map(({ label, to, Icon }) => (
+            <Link
+              key={label}
+              to={to}
+              className="group flex items-center gap-1 hover:text-teal-500 transition relative font-medium"
+              onClick={handleLinkClick}
+            >
+              {label}
+              <Icon
+                size={16}
+                className="opacity-0 group-hover:opacity-100 transition absolute right-[-20px]"
+                aria-hidden="true"
+              />
+            </Link>
+          ))}
         </ul>
       </div>
     </nav>

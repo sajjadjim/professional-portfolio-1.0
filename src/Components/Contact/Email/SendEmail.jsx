@@ -7,15 +7,15 @@ const SendEmail = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_goye8av', '', form.current, {
+    emailjs.sendForm('service_goye8av', 'template_ba6ua04', form.current, {
         publicKey: 'vnA9Trwl2IBt2a_Fr',
       })
       .then(
         () => {
-        //   console.log('SUCCESS!');
+          console.log('SUCCESS!');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log('Send to Failed Email...', error.text);
         },
       );
   };

@@ -59,11 +59,11 @@ export default function Section1() {
                         </h3>
                         <div className="flex items-center gap-3">
                             <p className="text-3xl md:text-5xl">I am</p>
-                            <span className="text-lg md:text-2xl text-teal-400 font-medium border border-teal-400 rounded-full px-3 py-1 bg-black/40">
+                            <span className="text-lg md:text-2xl text-teal-500 font-medium border border-teal-400 rounded-full px-3 py-1 bg-black/40">
                                 MERN Stack Developer
                             </span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-bold text-teal-700">
+                        <h1 className="text-3xl md:text-5xl font-bold text-teal-500">
                             <Typewriter
                                 words={['Programmer', 'Web Developer', 'Problem Solver']}
                                 loop={0}
