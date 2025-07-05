@@ -63,7 +63,7 @@ const EducationSection = () => {
             href="https://drive.google.com/file/d/19tnO4qI1dbdBmK908bddk1tbSJ85wPYX/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className='py-3 flex gap-2 items-center  bg-teal-500 font-bold text-white hover:text-teal-500 hover:border-[1px] hover:bg-white hover:border-teal-700 px-10 rounded-full my-5  cursor-pointer transition-colors duration-300'
+            className='py-2 flex gap-2 items-center  bg-teal-500 font-bold text-white hover:text-teal-500 hover:border-[1px] hover:bg-black hover:border-teal-700 px-10 rounded-full my-5  cursor-pointer transition-colors duration-300'
             download
           >
             CV <RiDownloadLine className='text-xl animate-bounce'></RiDownloadLine>
@@ -71,7 +71,7 @@ const EducationSection = () => {
         </div>
       </div>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold  mb-6 text-left md:mt-10">Education.</h2>
+        <h2 className="text-2xl font-bold  mb-6 text-left md:mt-10">Education.</h2>
         <div className="flex flex-wrap justify-center gap-6">
           {educationData.map((edu, index) => (
             <EducationCard key={index} {...edu} />

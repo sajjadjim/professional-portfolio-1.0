@@ -30,7 +30,7 @@ export default function Section3() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
         >
-            <h2 className="text-2xl md:text-4xl font-bold mb-5 text-left md:mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-5 text-left md:mb-10">
                 Projects.
             </h2>
 

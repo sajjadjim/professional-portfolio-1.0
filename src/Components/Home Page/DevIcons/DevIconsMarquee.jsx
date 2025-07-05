@@ -38,7 +38,7 @@ const icons = [
 export default function DevIconsMarquee() {
   return (
     <div className="md:w-10/12 w-full md:mx-auto  py-15 bg-black overflow-hidden relative">
-      <h1 className="md:text-4xl text-xl font-bold mb-5">Dev tools. </h1>
+      <h1 className="md:text-3xl text-2xl font-bold mb-5">Dev tools. </h1>
       <motion.div
         className="flex gap-12 absolute whitespace-nowrap"
         animate={{ x: ["0%", "-100%"] }}

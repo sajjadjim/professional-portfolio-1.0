@@ -6,7 +6,7 @@ const Github = () => {
         <div className='grid justify-center  md:py-10 py-5'
            
         >
-            <h1 className='text-left md:text-4xl text-2xl py-5 relative md:right-55 font-bold'>Github states.</h1>
+            <h1 className='text-left md:text-3xl text-2xl py-5 relative md:right-55 font-bold'>Github states.</h1>
             <motion.div className="flex justify-center my-8"
             initial={{ opacity: 1, x: 80 }}
             whileInView={{ opacity: 1, x: 0 }}
