@@ -78,7 +78,7 @@ export default function Section1() {
                         {/* Buttons */}
                         <div className="flex flex-wrap gap-4 mt-4">
                             <a
-                                href="https://drive.google.com/file/d/19tnO4qI1dbdBmK908bddk1tbSJ85wPYX/view?usp=drive_link" target="_blank"
+                                href="https://drive.google.com/file/d/1uAL88yRxC6jsrhCGFBZNsDaHGZ8B59Wr/view?usp=drive_link" target="_blank"
                                 className="flex items-center gap-2 bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-to-t from-sky-500 to-indigo-500 text-white font-semibold py-2 px-4 rounded-full hover:scale-105 transition"
                             >
                                 Resume <GoFile />
