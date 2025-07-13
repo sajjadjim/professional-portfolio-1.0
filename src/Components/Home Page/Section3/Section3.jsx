@@ -56,7 +56,7 @@ export default function Section3() {
                             >
                                 <div className="p-2 relative group rounded-md shadow-md overflow-hidden">
                                     <img
-                                        src={project.image || "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"}
+                                        src={project.image || "https://images.jdmagicbox.com/rep/b2b/new-year-greeting-card/new-year-greeting-card-10.jpg"}
                                         alt={project.name}
                                     />
 

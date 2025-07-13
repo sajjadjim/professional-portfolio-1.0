@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, Code, User, Mail } from 'lucide-react';
+import { Menu, X, Home, Code, User, Mail ,Sparkles} from 'lucide-react';
 import { Link } from 'react-router';
 
 const Navbar = () => {
@@ -7,12 +7,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   // Define navbar items with label, path and icon
-  const navItems = [
-    { label: 'Home', to: '/', Icon: Home },
-    { label: 'Projects', to: '/project', Icon: Code },
-    { label: 'About', to: '/about', Icon: User },
-    { label: 'Contact', to: '/contact', Icon: Mail },
-  ];
+const navItems = [
+  { label: 'Home', to: '/', Icon: Home },
+  { label: 'Projects', to: '/project', Icon: Code },
+  { label: 'About', to: '/about', Icon: User },
+  { label: 'Contact', to: '/contact', Icon: Mail },
+  { label: 'Fun Fact', to: '/fun-fact', Icon: Sparkles }, // ✅ New item added
+];
+
 
   const navbar = navItems.map(({ label, to, Icon }) => (
     <Link

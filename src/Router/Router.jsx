@@ -9,6 +9,7 @@ import ContactSection from "../Components/Contact/ContactSection";
 import Project from "../Components/Projects/Project";
 import Home from "../Home";
 import HomePage from "../Components/Home Page/HomePage";
+import FunFact from "../Components/Fun Fact/FunFact";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ children: [
   {
     path:'/project'
     ,Component: Project
+  },
+  {
+    path:'/fun-fact',
+    Component: FunFact
   }
     ]
   },
