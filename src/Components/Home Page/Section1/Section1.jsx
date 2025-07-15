@@ -87,7 +87,7 @@ export default function Section1() {
                                 href="https://wa.me/8801600101810"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 border border-white text-white font-semibold py-2 px-4 rounded-full hover:bg-white hover:scale-110 hover:text-black transition"
+                                className="flex items-center gap-2 border border-white text-white font-semibold py-2 px-4 rounded-full hover:bg-white hover:scale-110 hover:text-black  transition duration-400"
                             >
                                 Contact <MdPhone />
                             </a>

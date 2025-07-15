@@ -49,7 +49,7 @@ export default function DevIconsMarquee() {
         {[...icons, ...icons].map((item, index) => (
           <div
             key={index}
-            className="text-5xl hover:scale-110 transition-transform duration-300"
+            className="text-5xl cursor-pointer hover:scale-110 transition-transform duration-300"
             title={item.name}
           >
             {item.icon}

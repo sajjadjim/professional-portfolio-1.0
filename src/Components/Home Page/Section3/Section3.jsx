@@ -7,6 +7,7 @@ import './style.css';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { FaExternalLinkAlt, FaCode, FaServer } from 'react-icons/fa';
 import { Link } from 'react-router';
 import { FaEye } from 'react-icons/fa';
 
@@ -92,10 +93,10 @@ export default function Section3() {
                                             href={project.liveLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn btn-sm bg-teal-600 rounded-lg hover:bg-[#111] hover:border-[1px] hover:border-teal-500 hover:text-teal-600 "
+                                            className="btn btn-sm bg-teal-600 rounded-lg hover:bg-[#111] hover:border-[1px] hover:border-teal-500 hover:text-teal-600 transition duration-400"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            Live View
+                                            <FaExternalLinkAlt className="inline mr-1" /> Live View
                                         </a>
                                     )}
                                     {project.clientCode && (
@@ -103,10 +104,10 @@ export default function Section3() {
                                             href={project.clientCode}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn btn-sm rounded-lg border-teal-600 text-teal-600  hover:text-white hover:bg-teal-600"
+                                            className="btn btn-sm rounded-lg border-teal-600 text-teal-600 hover:text-white hover:bg-teal-600 transition duration-400"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            Client Side
+                                            <FaCode className="inline mr-1" /> Client Side
                                         </a>
                                     )}
                                     {project.serverCode && (
@@ -114,10 +115,10 @@ export default function Section3() {
                                             href={project.serverCode}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn btn-sm rounded-lg bg-[#111] btn-outline border-teal-600 text-teal-600  hover:text-white hover:bg-teal-600"
+                                            className="btn btn-sm rounded-lg bg-[#111] btn-outline border-teal-600 text-teal-600 hover:text-white hover:bg-teal-600  transition duration-400"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            Server Side
+                                            <FaServer className="inline mr-1" /> Server Side
                                         </a>
                                     )}
                                 </div>
@@ -131,13 +132,13 @@ export default function Section3() {
             <div className="flex justify-center gap-6 mt-8">
                 <button
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     <ArrowLeft size={18} /> Prev
                 </button>
                 <button
                     onClick={() => swiperRef.current?.slideNext()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     Next <ArrowRight size={18} />
                 </button>

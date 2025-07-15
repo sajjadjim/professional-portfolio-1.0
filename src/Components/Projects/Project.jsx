@@ -106,6 +106,7 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
     );
 };
 
+// card view show the project 
 const CardView = ({ project, onSeeMore }) => {
     const { name, description, technologies, screenshots, clientCode, serverCode, liveLink } = project;
 
@@ -129,7 +130,7 @@ const CardView = ({ project, onSeeMore }) => {
         </motion.div>
     );
 };
-
+// project link 
 const ProjectLinks = ({ clientCode, serverCode, liveLink, onSeeMore }) => (
     <div className="flex justify-between items-center w-full">
         <div className="flex flex-wrap gap-4 text-sm font-semibold mt-2">
@@ -162,17 +163,17 @@ const ProjectLinks = ({ clientCode, serverCode, liveLink, onSeeMore }) => (
 
 const ProjectModal = ({ project, onClose }) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black bg-opacity-70 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm  bg-opacity-70 p-4  ">
             <div className="bg-[#111] text-white rounded-xl shadow-lg max-w-3xl w-full p-6 overflow-y-auto max-h-[90vh] relative">
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-3 text-white text-2xl font-bold hover:text-teal-400"
+                    className="absolute top-2 right-3 cursor-pointer text-white text-2xl font-bold hover:text-teal-400"
                 >
                     &times;
                 </button>
                 <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <p className="text-sm mb-4">{project.short_description}</p>
+                {/* <p className="text-gray-300 mb-4">{project.description}</p> */}
+                <p className="text-sm mb-4">Description: {project.short_description}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     {project.screenshots.map((img, i) => (
                         <img key={i} src={img} alt={`Screenshot ${i + 1}`} className="rounded-lg w-full h-48 object-cover" />

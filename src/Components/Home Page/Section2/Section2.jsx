@@ -14,7 +14,7 @@ const Section2 = () => {
       try {
         const res = await fetch("https://raw.githubusercontent.com/sajjadjim/sajjadjim/refs/heads/main/Project%20Data/project.json");
         const data = await res.json();
-        setProjectCount(data.length);
+        setProjectCount(data?.length);
       } catch (err) {
         console.error("Error fetching projects:", err);
       }
@@ -22,6 +22,7 @@ const Section2 = () => {
 
     fetchProjects();
   }, []);
+  // console.log("Total Projects:", count);
 
   // Step 2: Start the count-up after 3 seconds
   useEffect(() => {
@@ -57,30 +58,55 @@ const Section2 = () => {
     >
       <div className=" text-center">
         <div className='flex  md:w-10/12 md:mx-auto gap-5 md:gap-4 mb-6 '>
-          {/* Button 1: Experience */}
+           {/* Button 1: Experience  */}
           <button className="relative group overflow-hidden md:py-6 px-5 font-bold w-full rounded-xl md:text-3xl
-  text-white border-2 border-cyan-500
-  bg-transparent
-  transition-all duration-500 ease-in-out
-  z-10"
+            text-white border-2 border-cyan-500
+            bg-transparent
+            transition-all duration-500 ease-in-out
+            z-10"
           >
-            <span className="relative z-10">Coding Experience <br /> 2.5+ Years</span>
+            <span className="relative z-10">
+              Coding Experience <br />
+              {(() => {
+                const [exp, setExp] = React.useState(0);
+                React.useEffect(() => {
+            const start = new Date('2023-01-01');
+            const now = new Date();
+            const diff = now - start;
+            const years = diff / (1000 * 60 * 60 * 24 * 365.25);
+            let i = 0;
+            const step = years / 20;
+            // set timer after show this years 
+            const timer = setTimeout(() => {
+              const interval = setInterval(() => {
+                i += step;
+                setExp(i >= years ? years : i);
+                if (i >= years) clearInterval(interval);
+              }, 80);
+            }, 200);
+            return () => clearTimeout(timer);
+                }, []);
+                return exp ? exp.toFixed(1) + '+ Years' : '0.0+ Years';
+              })()}
+            </span>
 
             {/* Animated gradient fill on hover */}
+            <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 
+              scale-x-0 group-hover:scale-x-100 origin-left 
+              transition-transform duration-500 ease-in-out z-0"
+            ></span>
             <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 
     scale-x-0 group-hover:scale-x-100 origin-left 
     transition-transform duration-500 ease-in-out z-0"
             ></span>
           </button>
 
-
-
           {/* Button 2: Projects */}
           <button className="relative group overflow-hidden md:py-6 px-5 font-bold w-full rounded-xl md:text-3xl
       text-white border-2 border-cyan-500 bg-transparent transition-all duration-500 ease-in-out z-10"
           >
             <span className="relative z-10 text-center block">
-              Projects <br /> {count-1}+ Completed
+              Projects <br /> {count}+ Completed
             </span>
 
             {/* Gradient fill on hover */}
