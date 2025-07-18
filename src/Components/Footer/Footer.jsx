@@ -5,8 +5,8 @@ import { Typewriter } from "react-simple-typewriter";
 const Footer = () => {
     return (
         <footer className="md:w-10/12 mx-auto    text-white py-8">
-             {/* Current Day and Date  */}
-            <div className="text-sm text-center my-5 text-gray-400">
+            {/* Current Day and Date  */}
+            <div className="text-sm text-center my-5 ">
                 {new Date().toLocaleDateString(undefined, {
                     weekday: 'long',
                     year: 'numeric',
@@ -30,28 +30,28 @@ const Footer = () => {
                 {/* Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium">
                     <h1 className="text-xl  font-bold ">
-                            <Typewriter
-                                words={['Welcome to visit ❤️‍🔥', 'Thank You', 'For Visit My Portfolio']}
-                                loop={0}
-                                cursor
-                                cursorStyle='|'
-                                typeSpeed={70}
-                                deleteSpeed={70}
-                                delaySpeed={2000}
-                            />
-                        </h1>
+                        <Typewriter
+                            words={['Welcome to visit ❤️‍🔥', 'Thank You', 'For Visit My Portfolio']}
+                            loop={0}
+                            cursor
+                            cursorStyle='|'
+                            typeSpeed={70}
+                            deleteSpeed={70}
+                            delaySpeed={2000}
+                        />
+                    </h1>
                 </ul>
 
                 {/* Social Icons */}
                 <div className="flex gap-4">
                     <a href="https://github.com/sajjadjim" target="_blank" rel="noopener noreferrer">
-                        <Github className="hover:text-indigo-400 transition" />
+                        <Github className="hover:text-teal-500 transition" />
                     </a>
                     <a href="https://www.linkedin.com/in/sajjadjim/" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="hover:text-indigo-400 transition" />
+                        <Linkedin className="hover:text-teal-500 transition" />
                     </a>
                     <a href="mailto:sajjadjim15@gmail.com">
-                        <Mail className="hover:text-indigo-400 transition" />
+                        <Mail className="hover:text-teal-500 transition" />
                     </a>
                 </div>
             </div>

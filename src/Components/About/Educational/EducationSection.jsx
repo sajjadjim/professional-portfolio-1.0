@@ -44,23 +44,23 @@ const EducationCard = ({ level, institution, degree, year, description, cgpa }) 
     <p className="text-md text-teal-300 font-medium mb-3">{degree}</p>
     <p className="text-md text-teal-300 font-medium mb-3">{cgpa}</p>
     <div className="h-1 w-16 bg-gradient-to-r from-teal-400 to-blue-400 rounded mb-4"></div>
-    <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
+    <p className=" text-sm 2xl:text-md leading-relaxed">{description}</p>
   </motion.div>
 );
 
 const EducationSection = () => {
   return (
-    <section className=" md:w-9/12 mx-auto pt-20">
-      <h1 className="md:text-6xl text-3xl font-bold text-center my-10 pacifico-regular">
+    <section className=" md:w-11/12 2xl:9/12 mx-auto pt-20">
+      <h1 className="md:text-3xl 2xl:text-6xl text-3xl font-bold text-center my-10 pacifico-regular">
         <span className='text-teal-500 '>&lt;</span> I'm Sajjad JIM <span className='text-teal-500'>/&gt;</span>
       </h1>
 
       <div>
-        <p className='text-center md:text-xl text-xl text-teal-500 '>Hi I am Jim . I am a student of computer Science And Engineering at Daffodil International University . My biggest goal in my life is to be a kind person .I want to achieve success in every step of my life .I always want to hard work for myself , my family and my country .
+        <p className='text-center 2xl:text-2xl lg:text-lg text-sm text-teal-500 '>Hi I am Jim . I am a student of computer Science And Engineering at Daffodil International University . My biggest goal in my life is to be a kind person .I want to achieve success in every step of my life .I always want to hard work for myself , my family and my country .
         </p>
         <div className='grid justify-center justify-items-center'>
           <a
-            href="https://drive.google.com/file/d/1uAL88yRxC6jsrhCGFBZNsDaHGZ8B59Wr/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1gmEiCATd3Ajv19ggxPmlC1B-R832x5IY/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className='py-2 flex gap-2 items-center  bg-teal-500 font-bold text-white hover:text-teal-500 hover:border-[1px] hover:bg-black hover:border-teal-700 px-10 rounded-full my-5  cursor-pointer transition-colors duration-300'
@@ -71,7 +71,7 @@ const EducationSection = () => {
         </div>
       </div>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl font-bold  mb-6 text-left md:mt-10">Education.</h2>
+        <h2 className="lg:text-2xl 2xl:text-4xl font-bold  mb-6 text-left 2xl:mt-10 lg:mt-5">Education.</h2>
         <div className="flex flex-wrap justify-center gap-6">
           {educationData.map((edu, index) => (
             <EducationCard key={index} {...edu} />

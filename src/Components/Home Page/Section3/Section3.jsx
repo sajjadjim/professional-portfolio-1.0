@@ -25,13 +25,13 @@ export default function Section3() {
     }, []);
 
     return (
-        <motion.div className="py-12 md:w-10/12  md:mx-auto px-4 text-center relative"
+        <motion.div className="py-12 md:w-11/12 2xl:w-10/12  md:mx-auto px-4 text-center relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
         >
-            <h2 className="text-2xl md:text-3xl font-bold mb-5 text-left md:mb-10">
+            <h2 className="text-2xl 2xl:text-3xl font-bold mb-5 text-left md:mb-10">
                 Projects.
             </h2>
 
@@ -45,8 +45,10 @@ export default function Section3() {
                 className="mySwiper"
                 breakpoints={{
                     0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
                     768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
+                    1024: { slidesPerView: 2 },
+                    1536: { slidesPerView: 3 },
                 }}
             >
                 {projectData.map((project, index) => (
@@ -80,9 +82,9 @@ export default function Section3() {
                                     <div className="badge  bg-linear-to-r from-cyan-500 to-blue-500">{project.category}</div>
                                 </h2>
                                 <p>{project.description}</p>
-                                <div className="card-actions justify-end flex-wrap">
+                                <div className="card-actions  justify-end flex-wrap">
                                     {project.technologies?.map((tech, techIndex) => (
-                                        <div key={techIndex} className="badge badge-outline">
+                                        <div key={techIndex} className="badge 2xl:block lg:hidden block badge-outline">
                                             {tech}
                                         </div>
                                     ))}
@@ -132,13 +134,13 @@ export default function Section3() {
             <div className="flex justify-center gap-6 mt-8">
                 <button
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition duration-400"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 lg:py-1   rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     <ArrowLeft size={18} /> Prev
                 </button>
                 <button
                     onClick={() => swiperRef.current?.slideNext()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 py-2 rounded-full shadow-md flex items-center  gap-2 transition duration-400"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 lg:py-1  rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     Next <ArrowRight size={18} />
                 </button>

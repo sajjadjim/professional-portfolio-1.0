@@ -13,7 +13,7 @@ const FunFact = () => {
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="md:w-10/12 mx-auto p-4  pt-25">
+      <div className="2xl:w-10/12 lg:w-11/12 mx-auto p-4  pt-25">
         <h1 className="text-xl md:text-3xl font-bold text-center text-teal-500 mb-10 flex items-center justify-center gap-3">
           <Star className="text-yellow-500 w-7 h-7" />
           Give You Some Fun

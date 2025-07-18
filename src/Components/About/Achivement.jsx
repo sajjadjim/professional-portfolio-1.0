@@ -8,7 +8,7 @@ import { Slide } from 'react-awesome-reveal';
 const Achievement = () => {
   return (
     <div className='py-10 bg-black'>
-      <div className='max-w-9/12 mx-auto'>
+      <div className='2xl:max-w-9/12 lg:w-11/12 mx-auto'>
         <h2 className="text-2xl md:my-10 my-5 md:mx-0 -mx-11 text-white font-bold text-left pb-3">
           Achievement.
         </h2>

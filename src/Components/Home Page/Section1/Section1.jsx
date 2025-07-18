@@ -14,12 +14,12 @@ const keywords = [
     "React", "Node.js", "Express.js", "Next.js", "C", "C++", "JavaScript", "Python",
     "TypeScript", "React Testing Library", "HTML", "CSS", "Firebase",
     "JWT", "Git", "GitHub", "C#", "MongoDB", "MySQL", "RESTful APIs",
-    "Tailwind CSS"
+    "Tailwind CSS", "Bootstrap", "Material UI", "Framer Motion", "Redux", "Socket.IO",
 ];
 
 export default function Section1() {
     return (
-        <section className="relative md:w-10/12 md:mx-auto md:py-30 py-20 flex items-center justify-center px-4 md:px-16 bg-black text-white overflow-hidden">
+        <section className="relative 2xl:w-10/12 lg:w-11/12 mx-auto 2xl:py-30 lg:py-20 pt-15 flex items-center justify-center px-4 md:px-16 bg-black text-white overflow-hidden">
             {/* Floating keywords */}
             {keywords.map((text, index) => (
                 <span
@@ -47,7 +47,7 @@ export default function Section1() {
                         <a href="https://github.com/sajjadjim"><FaGithub className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                     </div>
                     <div className="flex-1 space-y-4">
-                        <h3 className="text-2xl md:text-3xl font-semibold flex items-center gap-2">
+                        <h3 className="text-2xl 2xl:text-3xl font-semibold flex items-center gap-2">
                             Sajjad Hossain JIM
                             <span>
                                 <img
@@ -58,12 +58,12 @@ export default function Section1() {
                             </span>
                         </h3>
                         <div className="flex items-center gap-3">
-                            <p className="text-3xl md:text-5xl">I am</p>
-                            <span className="text-lg md:text-2xl text-teal-500 font-medium border border-teal-400 rounded-full px-3 py-1 bg-black/40">
+                            <p className="text-3xl 2xl:text-5xl">I am</p>
+                            <span className="text-lg 2xl:text-2xl text-teal-500 font-medium border border-teal-400 rounded-full px-3 py-1 bg-black/40">
                                 MERN Stack Developer
                             </span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-bold text-teal-500">
+                        <h1 className="text-3xl 2xl:text-5xl font-bold text-teal-500">
                             <Typewriter
                                 words={['Programmer', 'Web Developer', 'Problem Solver']}
                                 loop={0}
@@ -96,7 +96,7 @@ export default function Section1() {
                 </div>
 
                 {/* Profile Picture */}
-                <div className="relative group w-72 h-96 md:w-80 md:h-[320px] overflow-hidden rounded-2xl shadow-lg">
+                <div className="relative group w-72 h-96 md:w-80 2xl:h-[320px] lg:h-[280px] overflow-hidden rounded-2xl shadow-lg">
                     <img
                         src="https://github.com/sajjadjim/sajjadjim/blob/main/images/My_Picture1.JPG?raw=true"
                         alt="Profile"

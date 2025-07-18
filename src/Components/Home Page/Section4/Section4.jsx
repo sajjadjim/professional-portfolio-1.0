@@ -107,14 +107,14 @@ const Section4 = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative h-80 rounded-xl md:w-10/12  mx-auto overflow-hidden border-4 border-teal-700"
+      className="relative 2xl:h-80  lg:h-50 h-60 rounded-xl 2xl:w-10/12 lg:w-11/12 mx-auto overflow-hidden border-4 border-teal-700"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       <div className="absolute md:w-350   top-1/4 left-1/2 transform -translate-x-1/2 z-20 text-teal-700 bg-black bg-opacity-60  py-6 rounded-lg grid justify-center  text-2xl">
-        <h2 className="mb-4 md:text-5xl font-semibold text-center">{pages[index].title}</h2>
+        <h2 className="mb-4 2xl:text-5xl lg:text-3xl text-2xl font-semibold text-center">{pages[index].title}</h2>
         <div
           className="text-teal-700 text-left text-lg"
           dangerouslySetInnerHTML={{ __html: typedHTML }}

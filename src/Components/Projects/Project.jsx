@@ -15,10 +15,10 @@ const Project = () => {
 
     return (
         <div className='bg-black min-h-screen'>
-            <div className="md:w-9/12 mx-auto text-white md:py-25 py-15 px-4">
+            <div className="2xl:w-9/12 lg:w-11/12 mx-auto text-white md:py-25 py-15 px-4">
                 <div className="flex items-center justify-between mb-6">
-                    <h1 className="text-2xl md:text-3xl font-bold">Projects.</h1>
-                    <div className="flex gap-4 text-xl">
+                    <h1 className="text-2xl 2xl:text-3xl font-bold">Projects.</h1>
+                    <div className="flex gap-4 2xl:text-xl">
                         <button
                             onClick={() => setViewMode('slider')}
                             className={`p-2 rounded-full cursor-pointer ${viewMode === 'slider' ? 'bg-teal-600' : 'bg-gray-700'} hover:bg-teal-500`}

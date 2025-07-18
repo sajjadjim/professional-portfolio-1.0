@@ -56,15 +56,15 @@ const ContactSection = () => {
   })
   return (
     <section className="w-full min-h-screen bg-black flex flex-col justify-center items-center md:px-4 px-2 md:pt-25 pt-20">
-      <h2 className="text-4xl flex gap-2 font-bold mb-10 text-center text-white">
+      <h2 className="2xl:text-4xl md:text-3xl text-2xl flex gap-2 font-bold mb-10 text-center text-white">
         Contact Me
         <IoShareSocialSharp />
       </h2>
-      <p className="text-center md:text-xl mb-10 max-w-md text-gray-300">
+      <p className="text-center lg:text-md 2xl:text-xl mb-10 max-w-md text-gray-300">
         Feel free to reach out to me through any of the platforms below. I'm always open to
         collaboration, feedback, or just a friendly hello! 😊
       </p>
-      <motion.div className="grid grid-cols-2  sm:grid-cols-3 gap-6 max-w-xl w-full "
+      <motion.div className="grid grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4 gap-6 max-w-xl w-full "
        initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

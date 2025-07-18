@@ -37,8 +37,8 @@ const icons = [
 
 export default function DevIconsMarquee() {
   return (
-    <div className="md:w-10/12 w-full md:mx-auto  py-15 bg-black overflow-hidden relative">
-      <h1 className="md:text-3xl text-2xl font-bold mb-5">Dev tools. </h1>
+    <div className="2xl:w-10/12 lg:w-11/12 w-full mx-auto  py-15 bg-black overflow-hidden relative">
+      <h1 className="2xl:text-3xl text-2xl font-bold mb-5">Dev tools. </h1>
       <motion.div
         className="flex gap-12 absolute whitespace-nowrap"
         animate={{ x: ["0%", "-100%"] }}
@@ -49,7 +49,7 @@ export default function DevIconsMarquee() {
         {[...icons, ...icons].map((item, index) => (
           <div
             key={index}
-            className="text-5xl cursor-pointer hover:scale-110 transition-transform duration-300"
+            className="2xl:text-5xl lg:text-3xl cursor-pointer hover:scale-110 transition-transform duration-300"
             title={item.name}
           >
             {item.icon}

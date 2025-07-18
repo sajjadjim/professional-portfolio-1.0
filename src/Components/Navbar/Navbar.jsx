@@ -39,10 +39,10 @@ const navItems = [
   };
 
   return (
-    <nav className="md:w-9/12 md:mx-auto w-full fixed top-0 left-0 right-0 z-50 shadow-md ">
+    <nav className="lg:w-11/12 2xl:w-10/12 mx-auto w-full fixed top-0 left-0 right-0 z-50 shadow-md bg-black/30 backdrop-blur-md">
       <div className="flex justify-between items-center py-3 md:py-4">
         {/* Logo */}
-        <div className="md:text-3xl text-2xl font-bold cursor-pointer">Sajjad <span className='text-teal-600'>JIM.</span></div>
+        <div className="2xl:text-3xl text-2xl font-bold cursor-pointer">Sajjad <span className='text-teal-600'>JIM.</span></div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8">{navbar}</ul>
@@ -63,7 +63,7 @@ const navItems = [
         `}
         style={{ willChange: 'max-height, opacity' }}
       >
-        <ul className="px-4 pb-4 shadow-md justify-center align-center bg-black grid font-medium space-y-3">
+        <ul className="px-4 pb-4 shadow-md justify-center align-center bg-black/60 backdrop-blur-md grid font-medium space-y-3">
           {navItems.map(({ label, to, Icon }) => (
             <Link
               key={label}
