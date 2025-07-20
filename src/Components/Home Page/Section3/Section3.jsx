@@ -134,13 +134,13 @@ export default function Section3() {
             <div className="flex justify-center gap-6 mt-8">
                 <button
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 lg:py-1   rounded-full shadow-md flex items-center  gap-2 transition duration-400"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 py-1   rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     <ArrowLeft size={18} /> Prev
                 </button>
                 <button
                     onClick={() => swiperRef.current?.slideNext()}
-                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 lg:py-1  rounded-full shadow-md flex items-center  gap-2 transition duration-400"
+                    className="bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 py-1  rounded-full shadow-md flex items-center  gap-2 transition duration-400"
                 >
                     Next <ArrowRight size={18} />
                 </button>

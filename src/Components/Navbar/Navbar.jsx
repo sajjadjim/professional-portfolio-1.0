@@ -63,7 +63,7 @@ const navItems = [
         `}
         style={{ willChange: 'max-height, opacity' }}
       >
-        <ul className="px-4 pb-4 shadow-md justify-center align-center bg-black/60 backdrop-blur-md grid font-medium space-y-3">
+        <ul className="px-4 pb-4 shadow-md justify-center align-center  backdrop-blur-md grid font-medium space-y-3">
           {navItems.map(({ label, to, Icon }) => (
             <Link
               key={label}

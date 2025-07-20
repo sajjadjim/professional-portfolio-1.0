@@ -59,7 +59,7 @@ const Section2 = () => {
       <div className=" text-center">
         <div className='flex  md:w-10/12 md:mx-auto gap-5 md:gap-4 mb-6 '>
            {/* Button 1: Experience  */}
-          <button className="relative group overflow-hidden 2xl:py-6 lg:py-3 lg:px-2 2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
+          <button className="relative group overflow-hidden 2xl:py-6 lg:py-3 lg:px-2 py-2 2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
       text-white border-2 border-cyan-500 bg-transparent transition-all duration-500 ease-in-out z-10"
           >
             <span className="relative z-10">
@@ -99,7 +99,7 @@ const Section2 = () => {
           </button>
 
           {/* Button 2: Projects */}
-          <button className="relative group overflow-hidden 2xl:py-6  2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
+          <button className="relative group overflow-hidden 2xl:py-6 py-2 2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
       text-white border-2 border-cyan-500 bg-transparent transition-all duration-500 ease-in-out z-10"
           >
             <span className="relative z-10 text-center block">
