@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaServer, FaGlobe, FaThList, FaThLarge, FaEye } from 'react-icons/fa';
+import Skills from '../Skill/Skill';
 
 const Project = () => {
     const [projectData, setProjectData] = useState([]);
     const [viewMode, setViewMode] = useState('slider');
     const [selectedProject, setSelectedProject] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const projectsPerPage = 5;
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/sajjadjim/sajjadjim/main/project.json')
             .then((res) => res.json())
             .then((data) => setProjectData(data));
     }, []);
+
+    const totalPages = Math.ceil(projectData.length / projectsPerPage);
+    const startIndex = (currentPage - 1) * projectsPerPage;
+    const currentProjects = projectData.slice(startIndex, startIndex + projectsPerPage);
+
+    const handlePrev = () => {
+        if (currentPage > 1) setCurrentPage(currentPage - 1);
+    };
+
+    const handleNext = () => {
+        if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+    };
 
     return (
         <div className='bg-black min-h-screen'>
@@ -35,16 +50,33 @@ const Project = () => {
                 </div>
 
                 {viewMode === 'slider' ? (
-                    projectData.map((project, index) => (
+                    currentProjects.map((project, index) => (
                         <ProjectSliderCard key={index} project={project} onSeeMore={() => setSelectedProject(project)} />
                     ))
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {projectData.map((project, index) => (
+                        {currentProjects.map((project, index) => (
                             <CardView key={index} project={project} onSeeMore={() => setSelectedProject(project)} />
                         ))}
                     </div>
                 )}
+
+                <div className="flex justify-center mt-8 gap-4">
+                    <button
+                        onClick={handlePrev}
+                        disabled={currentPage === 1}
+                        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
+                    >
+                        Previous
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        disabled={currentPage === totalPages}
+                        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
 
             {selectedProject && (
@@ -69,7 +101,7 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
     const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % screenshots.length);
 
     return (
-        <motion.div className="md:flex border-teal-600 border-t-4 border-r-2 rounded-xl md:p-3 p-2 mb-6 bg-[#111]"
+        <motion.div className="md:flex border-teal-600 border-t-4 border-r-2 rounded-xl  md:p-3 p-2 mb-6 bg-[#111]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -96,7 +128,7 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
                     <h3 className="font-bold mb-2 text-teal-600">Uses Framework :</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {technologies.map((tech, i) => (
-                            <span key={i} className="bg-teal-600 px-3 py-1 text-xs rounded-full">{tech}</span>
+                            <span key={i} className="bg-teal-600 px-3 py-1 text-xs rounded-full hover:shadow-sm hover:shadow-teal-500 cursor-pointer transition duration-300">{tech}</span>
                         ))}
                     </div>
                 </div>
@@ -106,13 +138,12 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
     );
 };
 
-// card view show the project 
 const CardView = ({ project, onSeeMore }) => {
     const { name, description, technologies, screenshots, clientCode, serverCode, liveLink } = project;
 
     return (
         <motion.div
-            className="bg-[#111] rounded-xl overflow-hidden p-4 border border-teal-600"
+            className="bg-[#111] rounded-xl overflow-hidden p-4  border-t-5 border-r-3 border-teal-600"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
@@ -130,7 +161,7 @@ const CardView = ({ project, onSeeMore }) => {
         </motion.div>
     );
 };
-// project link 
+
 const ProjectLinks = ({ clientCode, serverCode, liveLink, onSeeMore }) => (
     <div className="flex justify-between items-center w-full">
         <div className="flex flex-wrap gap-4 text-sm font-semibold mt-2">
@@ -163,7 +194,7 @@ const ProjectLinks = ({ clientCode, serverCode, liveLink, onSeeMore }) => (
 
 const ProjectModal = ({ project, onClose }) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm  bg-opacity-70 p-4  ">
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-opacity-70 p-4">
             <div className="bg-[#111] text-white rounded-xl shadow-lg max-w-3xl w-full p-6 overflow-y-auto max-h-[90vh] relative">
                 <button
                     onClick={onClose}
@@ -172,7 +203,6 @@ const ProjectModal = ({ project, onClose }) => {
                     &times;
                 </button>
                 <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
-                {/* <p className="text-gray-300 mb-4">{project.description}</p> */}
                 <p className="text-sm mb-4">Description: {project.short_description}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     {project.screenshots.map((img, i) => (
