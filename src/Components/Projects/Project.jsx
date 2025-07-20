@@ -30,7 +30,7 @@ const Project = () => {
 
     return (
         <div className='bg-black min-h-screen'>
-            <div className="2xl:w-9/12 lg:w-11/12 mx-auto text-white md:py-25 py-15 px-4">
+            <div className="2xl:w-9/12 lg:w-11/12 mx-auto text-white md:pt-25 pt-15 px-4">
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-2xl 2xl:text-3xl font-bold">Projects.</h1>
                     <div className="flex gap-4 2xl:text-xl">
@@ -65,14 +65,14 @@ const Project = () => {
                     <button
                         onClick={handlePrev}
                         disabled={currentPage === 1}
-                        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
+                        className="2xl:px-4 2xl:py-2 lg:px-2 lg:py-1 px-3 py-2 cursor-pointer bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
                     >
                         Previous
                     </button>
                     <button
                         onClick={handleNext}
                         disabled={currentPage === totalPages}
-                        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
+                        className="2xl:px-4 2xl:py-2 lg:px-2 lg:py-1 px-3 py-2 cursor-pointer bg-gray-800 text-white rounded hover:bg-teal-600 disabled:opacity-50"
                     >
                         Next
                     </button>
