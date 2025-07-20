@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from "react";
 import {
   FaHtml5,
@@ -44,15 +45,46 @@ const programmingSkills = [
   { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const SkillGroup = ({ title, skills }) => (
   <div className="mb-10">
     <h3 className="text-xl font-semibold text-teal-400 mb-4">{title}</h3>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+    <motion.div
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       {skills.map((skill) => (
-        <div
+        <motion.div
           key={skill.name}
-          className="group flex flex-col items-center justify-center bg-white dark:bg-black border hover:border-teal-500 hover:shadow-md hover:shadow-teal-500 border-gray-200 dark:border-gray-700 rounded-xl p-4 transition transform hover:scale-105 cursor-pointer"
+          variants={itemVariants}
+          className="group flex flex-col items-center justify-center bg-white dark:bg-black border hover:border-teal-500 hover:shadow-md hover:shadow-teal-500 border-gray-200 dark:border-gray-700 rounded-2xl p-4 transition transform hover:scale-105 cursor-pointer"
           title={skill.name}
+          whileHover={{ scale: 1.08 }}
         >
           <span
             className="text-2xl md:text-3xl mb-2 drop-shadow"
@@ -63,9 +95,9 @@ const SkillGroup = ({ title, skills }) => (
           <span className="text-sm md:text-base font-semibold tracking-wide text-center">
             {skill.name}
           </span>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   </div>
 );
 
@@ -73,16 +105,15 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="px-4 md:px-8 py-6 2xl:py-10 dark:text-white"
+      className="px-4 md:px-8 pt-6 2xl:pt-10 dark:text-white"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl 2xl:text-4xl font-bold text-center mb-8 text-teal-500">
-          My Development Tools
+      <div className="2xl:max-w-9/12 lg:w-11/12 mx-auto">
+        <h2 className="text-2xl 2xl:text-4xl font-bold my-8 text-left">
+          Development Tools.
         </h2>
-
-        <SkillGroup title="Frontend Development" skills={frontendSkills} />
-        <SkillGroup title="Backend Development" skills={backendSkills} />
-        <SkillGroup title="Programming Languages" skills={programmingSkills} />
+        <SkillGroup title="Frontend" skills={frontendSkills} />
+        <SkillGroup title="Backend " skills={backendSkills} />
+        <SkillGroup title="Problem solving " skills={programmingSkills} />
       </div>
     </section>
   );

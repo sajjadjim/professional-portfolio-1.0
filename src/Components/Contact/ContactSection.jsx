@@ -39,21 +39,22 @@ const contactInfo = [
     link: 'https://medium.com/@sajjadjim',
   },
   {
-  name: 'GitHub',
-  icon: <FaGithub className="text-3xl " />,
-  link: 'https://github.com/sajjadjim',
-},
-{
-  name: 'Telegram',
-  icon: <FaTelegramPlane className="text-3xl " />,
-  link: 'https://t.me/sajjadjim15',
-}
+    name: 'GitHub',
+    icon: <FaGithub className="text-3xl " />,
+    link: 'https://github.com/sajjadjim',
+  },
+  {
+    name: 'Telegram',
+    icon: <FaTelegramPlane className="text-3xl " />,
+    link: 'https://t.me/sajjadjim15',
+  }
 ];
 
 const ContactSection = () => {
-  useEffect(()=>{
+  useEffect(() => {
     document.title = "Contact";
-  })
+  });
+
   return (
     <section className="w-full min-h-screen bg-black flex flex-col justify-center items-center md:px-4 px-2 md:pt-25 pt-20">
       <h2 className="2xl:text-4xl md:text-3xl text-2xl flex gap-2 font-bold mb-10 text-center text-white">
@@ -64,19 +65,19 @@ const ContactSection = () => {
         Feel free to reach out to me through any of the platforms below. I'm always open to
         collaboration, feedback, or just a friendly hello! 😊
       </p>
-      <motion.div className="grid grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4 gap-6 max-w-xl w-full "
-       initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-      >
+
+      <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 max-w-xl w-full">
         {contactInfo.map((contact, index) => (
-          <a
+          <motion.a
             key={index}
             href={contact.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex border-teal-500 border-t-5 border-r-2  flex-col items-center justify-center p-6 rounded-2xl border  bg-[#111] shadow-md hover:shadow-xl transition-all hover:shadow-teal-800 duration-300 hover:scale-105 hover:border-teal-500 group  "
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="flex border-teal-500 border-t-5 border-r-2 flex-col items-center justify-center p-6 rounded-2xl border bg-[#111] shadow-md hover:shadow-xl transition-all hover:shadow-teal-800 duration-300 hover:scale-105 hover:border-teal-500 group"
           >
             <span className="transition-colors duration-300 group-hover:text-blue-400">
               {contact.icon}
@@ -84,14 +85,16 @@ const ContactSection = () => {
             <span className="mt-2 font-medium text-gray-200 hover:text-teal-500 transition-colors duration-300">
               {contact.name}
             </span>
-          </a>
+          </motion.a>
         ))}
-      </motion.div>
-      <motion.div className="md:w-full md:mx-auto md:mt-10 md:px-4 pt-5 flex justify-center"
-       initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+      </div>
+
+      <motion.div
+        className="md:w-full md:mx-auto md:mt-10 md:px-4 pt-5 flex justify-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         <SendEmail />
       </motion.div>

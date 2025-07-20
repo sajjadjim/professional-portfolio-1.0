@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import EducationSection from './Educational/EducationSection';
 import Achievement from './Achivement';
+import Skills from '../Skill/Skill';
 
 const ABout = () => {
     useEffect(()=>{
@@ -9,6 +10,7 @@ const ABout = () => {
     return (
         <div  className='bg-black'>
             <EducationSection ></EducationSection>
+            <Skills></Skills>
             <Achievement></Achievement>
         </div>
     );
