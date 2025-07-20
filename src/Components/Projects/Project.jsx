@@ -8,7 +8,7 @@ const Project = () => {
     const [viewMode, setViewMode] = useState('slider');
     const [selectedProject, setSelectedProject] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const projectsPerPage = 5;
+    const projectsPerPage = 4;
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/sajjadjim/sajjadjim/main/project.json')
@@ -40,6 +40,7 @@ const Project = () => {
                         >
                             <FaThList />
                         </button>
+
                         <button
                             onClick={() => setViewMode('card')}
                             className={`p-2 rounded-full cursor-pointer ${viewMode === 'card' ? 'bg-teal-600' : 'bg-gray-700'} hover:bg-teal-500`}
@@ -61,7 +62,7 @@ const Project = () => {
                     </div>
                 )}
 
-                <div className="flex justify-center mt-8 gap-4">
+                <div className="flex justify-center mt-8 gap-4 items-center">
                     <button
                         onClick={handlePrev}
                         disabled={currentPage === 1}
@@ -69,6 +70,21 @@ const Project = () => {
                     >
                         Previous
                     </button>
+
+                    {/* Page numbers */}
+                    <div className="flex gap-2">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
+                            <button
+                                key={num}
+                                onClick={() => setCurrentPage(num)}
+                                className={`px-[10px] py-[4px] cursor-pointer rounded-full text-sm font-semibold ${currentPage === num ? 'bg-teal-600 text-white' : 'bg-gray-700 text-gray-300'
+                                    } hover:bg-teal-500`}
+                            >
+                                {num}
+                            </button>
+                        ))}
+                    </div>
+
                     <button
                         onClick={handleNext}
                         disabled={currentPage === totalPages}
@@ -125,7 +141,7 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">{name}</h2>
                     <p className="text-sm mb-4">{description}</p>
-                    <h3 className="font-bold mb-2 text-teal-600">Uses Framework :</h3>
+                    <h3 className="font-bold mb-2 text-teal-600">Technologies Used:</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {technologies.map((tech, i) => (
                             <span key={i} className="bg-teal-600 px-3 py-1 text-xs rounded-full hover:shadow-sm hover:shadow-teal-500 cursor-pointer transition duration-300">{tech}</span>

@@ -9,7 +9,7 @@ const educationData = [
     degree: 'B.Sc in Computer Science and Engineering',
     year: '2022 - Present',
     cgpa: '3.58 (out of 4.00)',
-    description: 'Currently, I am pursuing my B.Sc in Computer Science and Engineering at Daffodil International University, focusing on software development, algorithms, and modern technologies. My coursework includes data structures, web development, artificial intelligence, and database management. I have participated in several coding competitions and group projects, which have enhanced my teamwork and problem-solving skills.',
+    description: 'Currently, I am pursuing my B.Sc in Computer Science and Engineering at Daffodil International University, focusing on software development, algorithms, and modern technologies.My coursework includes data structures, web development, artificial intelligence.',
   },
   {
     level: 'College',
