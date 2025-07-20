@@ -6,3 +6,35 @@
   font-family: "Parkinsans", sans-serif;
 
 }
+@keyframes bounce-up {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+}
+
+.animate-bounce-up {
+  animation: bounce-up 1s ease-in-out forwards;
+}
+
+@keyframes flame {
+  0% { transform: scaleY(1) scaleX(1); opacity: 0.9; }
+  50% { transform: scaleY(1.3) scaleX(0.8); opacity: 1; }
+  100% { transform: scaleY(1) scaleX(1); opacity: 0.9; }
+}
+
+.animate-flame {
+  animation: flame 0.3s infinite ease-in-out;
+}
