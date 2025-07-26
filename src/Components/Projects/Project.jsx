@@ -7,12 +7,25 @@ const Project = () => {
     const [viewMode, setViewMode] = useState('slider');
     const [selectedProject, setSelectedProject] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
     const projectsPerPage = 4;
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/sajjadjim/sajjadjim/main/project.json')
-            .then((res) => res.json())
-            .then((data) => setProjectData(data));
+        const fetchData = async () => {
+            try {
+                const res = await fetch('https://raw.githubusercontent.com/sajjadjim/sajjadjim/main/project.json');
+                const data = await res.json();
+                setProjectData(data);
+                setTimeout(() => setLoading(false), 700); // Wait 1.2s before removing spinner
+            } catch (err) {
+                console.error("Error loading project data:", err);
+                setError(true);
+            }
+        };
+
+        fetchData();
     }, []);
 
     const totalPages = Math.ceil(projectData.length / projectsPerPage);
@@ -27,6 +40,20 @@ const Project = () => {
         if (currentPage < totalPages) setCurrentPage(currentPage + 1);
     };
 
+    // Loading or Error state screen
+    if (loading || error) {
+        return (
+            <div className="min-h-screen bg-black flex items-center justify-center">
+                <div className="flex flex-col items-center gap-4">
+                    <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-teal-500"></div>
+                    <p className="text-white text-lg font-semibold">
+                        {error ? "Failed to load projects. Retrying..." : "Loading projects..."}
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className='bg-black min-h-screen'>
             <div className="2xl:w-9/12 lg:w-11/12 mx-auto text-white md:pt-25 pt-15 px-4">
@@ -39,7 +66,6 @@ const Project = () => {
                         >
                             <FaThList />
                         </button>
-
                         <button
                             onClick={() => setViewMode('card')}
                             className={`p-2 rounded-full cursor-pointer ${viewMode === 'card' ? 'bg-teal-600' : 'bg-gray-700'} hover:bg-teal-500`}
@@ -122,7 +148,6 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
             whileHover={{ scale: 1.02 }}
             viewport={{ once: true }}
         >
-            {/* Image Slider */}
             <motion.div
                 className="relative w-full md:w-1/3 aspect-video rounded-xl overflow-hidden shadow-inner"
                 initial={{ opacity: 0, x: -30 }}
@@ -134,26 +159,14 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
                         key={idx}
                         src={img}
                         alt={`Screenshot ${idx + 1}`}
-                        className={`absolute w-full h-full object-cover transition-opacity duration-700 rounded-xl ${idx === currentIndex ? 'opacity-100' : 'opacity-0'
-                            }`}
+                        className={`absolute w-full h-full object-cover transition-opacity duration-700 rounded-xl ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
                         style={{ zIndex: idx === currentIndex ? 1 : 0 }}
                     />
                 ))}
-                <button
-                    onClick={prevSlide}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-1 opacity-80 hover:opacity-100"
-                >
-                    ←
-                </button>
-                <button
-                    onClick={nextSlide}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-teal-600 text-white rounded-full p-1 opacity-80 hover:opacity-100"
-                >
-                    →
-                </button>
+                <button onClick={prevSlide} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-1 opacity-80 hover:opacity-100">←</button>
+                <button onClick={nextSlide} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-teal-600 text-white rounded-full p-1 opacity-80 hover:opacity-100">→</button>
             </motion.div>
 
-            {/* Details */}
             <motion.div
                 className="md:ml-6 mt-4 md:mt-0 w-full md:w-2/3 flex flex-col justify-between"
                 initial={{ opacity: 0, x: 30 }}
@@ -161,31 +174,18 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
                 transition={{ delay: 0.3, duration: 0.6 }}
             >
                 <div>
-                    <h2 className="text-2xl font-semibold mb-2 text-white group-hover:text-teal-400 transition-all">
-                        {name}
-                    </h2>
+                    <h2 className="text-2xl font-semibold mb-2 text-white group-hover:text-teal-400 transition-all">{name}</h2>
                     <p className="text-sm mb-4 text-gray-300">{description}</p>
                     <h3 className="font-bold mb-2 text-teal-600">Technologies Used:</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {technologies.map((tech, i) => (
-                            <span
-                                key={i}
-                                className="bg-teal-600 px-3 py-1 text-xs rounded-full text-white shadow-md"
-                            >
-                                {tech}
-                            </span>
+                            <span key={i} className="bg-teal-600 px-3 py-1 text-xs rounded-full text-white shadow-md">{tech}</span>
                         ))}
                     </div>
                 </div>
-                <ProjectLinks
-                    clientCode={clientCode}
-                    serverCode={serverCode}
-                    liveLink={liveLink}
-                    onSeeMore={onSeeMore}
-                />
+                <ProjectLinks clientCode={clientCode} serverCode={serverCode} liveLink={liveLink} onSeeMore={onSeeMore} />
             </motion.div>
         </motion.div>
-
     );
 };
 
@@ -217,42 +217,18 @@ const CardView = ({ project, onSeeMore, index }) => {
 const ProjectLinks = ({ clientCode, serverCode, liveLink, onSeeMore }) => (
     <div className="flex justify-between items-center w-full">
         <div className="flex flex-wrap gap-4 text-sm font-semibold mt-2">
-            {clientCode && (
-                <a href={clientCode} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400">
-                    <FaGithub className="text-pink-400 text-lg" /> Client
-                </a>
-            )}
-            {serverCode && (
-                <a href={serverCode} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400">
-                    <FaServer className="text-gray-400 text-lg" /> Server
-                </a>
-            )}
-            {liveLink && (
-                <a href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400">
-                    <FaGlobe className="text-blue-400 text-lg" /> Live
-                </a>
-            )}
+            {clientCode && <a href={clientCode} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400"><FaGithub className="text-pink-400 text-lg" /> Client</a>}
+            {serverCode && <a href={serverCode} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400"><FaServer className="text-gray-400 text-lg" /> Server</a>}
+            {liveLink && <a href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-teal-400"><FaGlobe className="text-blue-400 text-lg" /> Live</a>}
         </div>
-        {onSeeMore && (
-            <button
-                onClick={onSeeMore}
-                className="flex cursor-pointer items-center gap-2 text-sm text-teal-500 underline hover:text-teal-300"
-            >
-                <FaEye className="text-lg" /> See More
-            </button>
-        )}
+        {onSeeMore && <button onClick={onSeeMore} className="flex cursor-pointer items-center gap-2 text-sm text-teal-500 underline hover:text-teal-300"><FaEye className="text-lg" /> See More</button>}
     </div>
 );
 
 const ProjectModal = ({ project, onClose }) => (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-opacity-70 p-4">
         <div className="bg-[#111] text-white rounded-xl shadow-lg max-w-3xl w-full p-6 overflow-y-auto max-h-[90vh] relative">
-            <button
-                onClick={onClose}
-                className="absolute top-2 right-3 cursor-pointer text-white text-2xl font-bold hover:text-teal-400"
-            >
-                &times;
-            </button>
+            <button onClick={onClose} className="absolute top-2 right-3 cursor-pointer text-white text-2xl font-bold hover:text-teal-400">&times;</button>
             <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
             <p className="text-sm mb-4">Description: {project.short_description}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -269,11 +245,7 @@ const ProjectModal = ({ project, onClose }) => (
                 </div>
             </div>
             <div className="mt-4">
-                <ProjectLinks
-                    clientCode={project.clientCode}
-                    serverCode={project.serverCode}
-                    liveLink={project.liveLink}
-                />
+                <ProjectLinks clientCode={project.clientCode} serverCode={project.serverCode} liveLink={project.liveLink} />
             </div>
         </div>
     </div>
