@@ -10,16 +10,18 @@ const Section2 = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("https://raw.githubusercontent.com/sajjadjim/sajjadjim/refs/heads/main/Project%20Data/project.json");
+        const res = await fetch("https://raw.githubusercontent.com/sajjadjim/sajjadjim/refs/heads/main/project.json");
         const data = await res.json();
         setProjectCount(data?.length);
       } catch (err) {
         console.error("Error fetching projects:", err);
       }
     };
-
     fetchProjects();
   }, []);
+
+  console.log("Length of project data:", projectCount);
+
 
   useEffect(() => {
     if (projectCount > 0) {
