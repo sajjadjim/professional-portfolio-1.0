@@ -60,7 +60,7 @@ export default function Section1() {
                         <div className="flex items-center gap-3">
                             <p className="text-3xl 2xl:text-5xl">I am</p>
                             <span className="text-lg 2xl:text-2xl  text-teal-500 font-medium border border-teal-400 rounded-full px-3 py-1 bg-black/40  hover:bg-teal-500 hover:text-white transition duration-300">
-                                MERN Stack Developer
+                                Web Developer
                             </span>
                         </div>
                         <h1 className="text-3xl 2xl:text-5xl font-bold text-teal-500">
