@@ -21,7 +21,7 @@ const contactInfo = [
   {
     name: 'WhatsApp',
     icon: <FaWhatsapp className="text-3xl text-green-500" />,
-    link: 'https://wa.me/880123456789',
+    link: 'https://wa.me/+8801600101810',
   },
   {
     name: 'Facebook',
@@ -31,7 +31,7 @@ const contactInfo = [
   {
     name: 'LinkedIn',
     icon: <FaLinkedinIn className="text-3xl text-blue-800" />,
-    link: 'https://linkedin.com/in/yourprofile',
+    link: 'https://www.linkedin.com/in/sajjadjim/',
   },
   {
     name: 'Medium',
