@@ -35,7 +35,7 @@ export default function Section3() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="card border-t-6 shadow-md shadow-teal-600 border-teal-600 bg-[#111] w-96 mx-auto hover:shadow-lg transition"
+            className="card border-t-7 shadow-md shadow-teal-900 border-teal-700 border-r-2 bg-[#111] w-96 mx-auto hover:shadow-lg transition"
         >
             {/* ... your existing render code for project card ... */}
             <figure className="hover:opacity-80 transition duration-200 cursor-pointer">
@@ -57,7 +57,7 @@ export default function Section3() {
                     </div>
                 </div>
             </figure>
-            <div className="card-body">
+            <div className="card-body bg-gradient-to-br from-teal-900/10 to-teal-900/40 cursor-pointer hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300">
                 <h2 className="card-title">
                     {project.name}
                     <div className="badge bg-linear-to-r from-cyan-500 to-blue-500">{project.category}</div>
@@ -226,7 +226,7 @@ export default function Section3() {
 
             {/* Modal */}
             {selectedProject && (
-                <div className="fixed inset-0 z-50 flex items-center text-black justify-center backdrop-blur-sm">
+                <div className="fixed  inset-0 z-50 flex items-center text-black justify-center backdrop-blur-sm">
                     <div className="bg-white/80 max-w-md w-full rounded-xl p-6 relative shadow-xl border border-gray-300">
                         <button
                             onClick={() => setSelectedProject(null)}

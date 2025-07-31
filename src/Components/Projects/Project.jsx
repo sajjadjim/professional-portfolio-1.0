@@ -141,7 +141,7 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
 
     return (
         <motion.div
-            className="md:flex border-teal-600 border-t-4 border-r-2 rounded-2xl md:p-4 p-3 mb-8 bg-[#111] shadow-lg hover:shadow-teal-600 transition-all duration-300 group"
+            className="md:flex border-teal-600 border-t-5 border-r-2 rounded-2xl md:p-4 p-3 mb-8  shadow-lg hover:shadow-teal-800  group bg-gradient-to-br from-teal-900/10 to-teal-900/40  hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300"
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -195,7 +195,7 @@ const CardView = ({ project, onSeeMore, index }) => {
 
     return (
         <motion.div
-            className="bg-[#111] rounded-xl overflow-hidden p-4 border-t-5 border-r-3 border-teal-600"
+            className=" rounded-xl overflow-hidden p-4 border-t-5 border-r-2 border-teal-600 bg-gradient-to-br from-teal-900/10 to-teal-900/40 cursor-pointer hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300"
             initial={{ opacity: 0, x: fromX }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}

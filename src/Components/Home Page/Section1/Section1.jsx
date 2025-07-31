@@ -5,6 +5,7 @@ import {
     FaXTwitter,
     FaGithub,
 } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import { GoFile } from "react-icons/go";
 import { MdPhone } from "react-icons/md";
@@ -41,10 +42,11 @@ export default function Section1() {
                 <div className="flex flex-col md:flex-row items-start gap-4 w-full">
                     {/* Social Icons */}
                     <div className="flex gap-4 md:gap-4 md:flex-col text-xl self-center md:self-start">
-                        <a href="https://www.facebook.com/sajjad.hossain.jim/"><FaFacebook className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                         <a href="https://www.linkedin.com/in/sajjadjim/"><FaLinkedin className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
-                        <a href="https://x.com/sajjad_jim15"><FaXTwitter className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                         <a href="https://github.com/sajjadjim"><FaGithub className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
+                        <a href="https://leetcode.com/sajjadjim/"><SiLeetcode className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
+                        <a href="https://x.com/sajjad_jim15"><FaXTwitter className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
+                        <a href="https://www.facebook.com/sajjad.hossain.jim/"><FaFacebook className="hover:scale-110 hover:text-teal-600 transition-transform" /></a>
                     </div>
                     <div className="flex-1 space-y-4">
                         <h3 className="text-2xl 2xl:text-3xl font-semibold flex items-center gap-2">
