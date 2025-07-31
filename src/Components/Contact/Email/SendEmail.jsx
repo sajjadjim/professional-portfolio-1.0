@@ -40,11 +40,11 @@ const SendEmail = () => {
   };
 
   return (
-    <div className="flex w-full mx-auto justify-center items-center md:min-h-[50vh] bg-gradient-to-br rounded-2xl shadow-lg">
+    <div className="flex w-full mx-auto justify-center items-center md:min-h-[50vh]  rounded-2xl shadow-lg">
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="bg-black md:p-8 rounded-xl shadow-md flex flex-col gap-6 md:w-full md:max-w-4xl"
+        className=" md:p-8 rounded-xl shadow-md flex flex-col gap-6 md:w-full md:max-w-4xl bg-gradient-to-br from-teal-900/10 to-teal-900/40  hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300"
       >
         <h2 className="mb-3 text-teal-700 font-bold text-2xl text-center">Email Me</h2>
         <div className="flex flex-row gap-4">

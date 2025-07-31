@@ -2,13 +2,17 @@ import React from 'react';
 import './style.css';
 import { motion } from 'framer-motion';
 import { RiDownloadLine } from 'react-icons/ri';
+import { FaUniversity, FaCheckCircle ,FaGraduationCap } from "react-icons/fa";
+import {  FaCalendarAlt } from "react-icons/fa";
+import { SlLocationPin } from "react-icons/sl";
 
 const educationData = [
   {
     level: 'University',
     institution: 'Daffodil International University',
     degree: 'B.Sc in Computer Science and Engineering',
-    year: '2022 - Present',
+    location: 'Ashulia Dhaka, Bangladesh',
+    year: '2022 - 2025',
     cgpa: '3.58 (out of 4.00)',
     description:
       'Currently, I am pursuing my B.Sc in Computer Science and Engineering at Daffodil International University, focusing on software development, algorithms, and modern technologies.My coursework includes data structures, web development, artificial intelligence.',
@@ -16,6 +20,7 @@ const educationData = [
   {
     level: 'College',
     institution: 'National Ideal College',
+    location: 'Khilgaon Dhaka, Bangladesh',
     degree: 'HSC (Science)',
     year: '2017 - 2019',
     cgpa: '5.00 (out of 5.00)',
@@ -24,12 +29,13 @@ const educationData = [
   },
   {
     level: 'School',
-    institution: 'Ideal School and College',
+    institution: 'Sristy Academic School',
+    location: 'Tangail, Bangladesh',
     degree: 'SSC (Science)',
     year: '2018 - 2020',
     cgpa: '5.00 (out of 5.00)',
     description:
-      'At Ideal School and College, I completed my secondary education with a focus on science. I consistently achieved high grades and participated in various academic and cultural events, laying the groundwork for my future studies.',
+      'At Sristy Academic School, I completed my secondary education with a focus on science. I consistently achieved high grades and participated in various academic and cultural events, laying the groundwork for my future studies.',
   },
 ];
 
@@ -48,23 +54,39 @@ const cardVariants = [
   },
 ];
 
-const EducationCard = ({ level, institution, degree, year, description, cgpa, motionStyle }) => (
-  <motion.div
-    className="bg-gradient-to-br from-gray-900 via-black border-t-5 border-r-2 to-gray-800 shadow-xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-102 hover:shadow-teal-800 duration-300 border-teal-500"
+const EducationCard = ({ level, institution, degree, year, description, cgpa,location, motionStyle }) => (
+   <motion.div
+    className="bg-gradient-to-br from-gray-900 via-black border-t-4 border-r-1 to-gray-800 shadow-xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-102 hover:shadow-teal-800 duration-300 border-teal-500"
     initial={motionStyle.initial}
     whileInView={motionStyle.animate}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
   >
     <div className="flex justify-between items-center mb-4">
-      <h3 className="text-2xl font-bold text-teal-400 tracking-wide">{level}</h3>
-      <span className="bg-black text-teal-300 px-3 py-1 rounded-full text-xs font-semibold shadow border border-teal-700">{year}</span>
+      <h3 className="text-2xl font-bold text-teal-500 tracking-wide flex items-center gap-2">
+        <FaGraduationCap /> {level}
+      </h3>
+      <span className="bg-black  px-3 py-1 bg-linear-to-r from-cyan-500 to-blue-600 rounded-full text-xs font-semibold shadow  flex items-center gap-1">
+        <FaCalendarAlt /> {year}
+      </span>
     </div>
-    <p className="text-lg font-semibold text-white mb-1">{institution}</p>
-    <p className="text-md text-teal-300 font-medium mb-3">{degree}</p>
-    <p className="text-md text-teal-300 font-medium mb-3">{cgpa}</p>
-    <div className="h-1 w-16 bg-gradient-to-r from-teal-400 to-blue-400 rounded mb-4"></div>
-    <p className="text-sm 2xl:text-md leading-relaxed">{description}</p>
+
+    <p className="text-lg font-semibold text-white mb-1 flex items-center gap-2">
+      <FaUniversity /> {institution}
+    </p>
+    <p className='text-sm text-white mb-1 flex items-center gap-2'><SlLocationPin></SlLocationPin>{location}</p>
+    <p className="text-md text-teal-500 font-medium mb-1 flex items-center gap-2">
+      🎓 {degree}
+    </p>
+    <p className="text-md text-teal-500 font-medium mb-3 flex items-center gap-2">
+     {cgpa}
+    </p>
+
+    <div className="h-1 w-16 bg-gradient-to-r from-teal-500 to-blue-400 rounded mb-4"></div>
+
+    <p className="text-sm 2xl:text-md leading-relaxed text-gray-300 flex gap-2 items-start">
+      <FaCheckCircle className="text-green-400 mt-1" />{description}
+    </p>
   </motion.div>
 );
 

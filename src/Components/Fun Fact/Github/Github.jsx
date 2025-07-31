@@ -49,9 +49,9 @@ const Github = () => {
         />
         <button
           onClick={fetchGithubUser}
-          className="flex items-center justify-center gap-1 px-4 py-2 bg-black text-white rounded shadow hover:bg-gray-800 w-full sm:w-auto"
+          className="flex items-center cursor-pointer justify-center gap-1 px-4 py-2  rounded-4xl text-white  shadow bg-gray-700 w-full sm:w-auto"
         >
-          <FaSearch /> Search
+          <FaSearch />
         </button>
       </div>
 
@@ -69,7 +69,7 @@ const Github = () => {
             className="w-36 h-36 rounded-full mx-auto lg:mx-0 shadow"
           />
           <div>
-            <h2 className="text-2xl font-semibold">{userData.name || userData.login}</h2>
+            <h2 className="text-2xl text-black font-semibold">{userData.name || userData.login}</h2>
             <p className="text-gray-700 italic">{userData.bio}</p>
             {userData.location && (
               <p className="text-sm text-gray-600 mt-1">📍 {userData.location}</p>
