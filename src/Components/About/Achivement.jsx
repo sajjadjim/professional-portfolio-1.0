@@ -4,13 +4,15 @@ import selfEstimate from '../../assets/Achivement/self_Estimate.png';
 import Spoken from '../../assets/Achivement/spoken_English.png';
 import Ai_Power from '../../assets/Achivement/Ai_Using.png';
 import { Slide } from 'react-awesome-reveal';
+import { GiLaurelsTrophy } from "react-icons/gi";
+
 
 const Achievement = () => {
   return (
     <div className=' bg-black'>
       <div className='2xl:max-w-9/12 lg:w-11/12 mx-auto'>
-        <h2 className="text-2xl 2xl:text-4xl md:my-10 my-5 md:mx-0  text-white font-bold text-left pb-3">
-          Achievement.
+        <h2 className="text-2xl 2xl:text-4xl md:my-10 my-5 md:mx-0 flex gap-2 text-white font-bold text-left pb-3">
+          <GiLaurelsTrophy></GiLaurelsTrophy>  Achievement.
         </h2>
 
         <Slide direction="up" duration={2000} triggerOnce>
@@ -18,7 +20,7 @@ const Achievement = () => {
           <div className='w-full overflow-x-auto lg:overflow-visible'>
             {/* Flex container for cards; horizontal scroll on small, wrap on large */}
             <div className='flex gap-6 min-w-[600px] sm:min-w-full lg:flex-wrap lg:min-w-0 lg:justify-center'>
-              
+
               {/* Card 1 */}
               <div className="min-w-[250px] max-w-xs flex-shrink-0 relative group rounded-md shadow-md overflow-hidden">
                 <img

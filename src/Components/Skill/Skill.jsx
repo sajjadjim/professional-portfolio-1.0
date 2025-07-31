@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import React from "react";
+import { FaRegFileCode } from "react-icons/fa";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -108,8 +110,8 @@ const Skills = () => {
       className="px-4 md:px-8 pt-6 2xl:pt-10 dark:text-white"
     >
       <div className="2xl:max-w-9/12 lg:w-11/12 mx-auto">
-        <h2 className="text-2xl 2xl:text-4xl font-bold my-8 text-left">
-          Development Tools.
+        <h2 className="text-2xl 2xl:text-4xl flex gap-2 font-bold my-8 text-left">
+        <FaRegFileCode></FaRegFileCode>  Development Tools.
         </h2>
         <SkillGroup title="Frontend" skills={frontendSkills} />
         <SkillGroup title="Backend " skills={backendSkills} />

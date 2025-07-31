@@ -5,6 +5,8 @@ import { RiDownloadLine } from 'react-icons/ri';
 import { FaUniversity, FaCheckCircle ,FaGraduationCap } from "react-icons/fa";
 import {  FaCalendarAlt } from "react-icons/fa";
 import { SlLocationPin } from "react-icons/sl";
+import { MdOutlineCastForEducation } from "react-icons/md";
+
 
 const educationData = [
   {
@@ -115,7 +117,7 @@ const EducationSection = () => {
       </div>
 
       <div className="2xl:max-w-9/12 lg:w-11/12 mx-auto text-center">
-        <h2 className="lg:text-2xl 2xl:text-4xl font-bold mb-6 text-left 2xl:mt-10 lg:mt-5">Education.</h2>
+        <h2 className="lg:text-2xl 2xl:text-4xl font-bold mb-6 text-left flex gap-2 2xl:mt-10 lg:mt-5"> <MdOutlineCastForEducation></MdOutlineCastForEducation>Education.</h2>
         <div className="flex flex-wrap justify-center gap-6">
           {educationData.map((edu, index) => (
             <EducationCard key={index} {...edu} motionStyle={cardVariants[index % cardVariants.length]} />
