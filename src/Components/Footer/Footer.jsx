@@ -4,7 +4,8 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Footer = () => {
     return (
-        <footer className="md:w-10/12 mx-auto    text-white py-8">
+       <div className="bg-gradient-to-br from-gray-900 via-blue-950/40  to-violet-950/50 ">
+         <footer className="md:w-10/12 mx-auto   text-white py-8">
             {/* Current Day and Date  */}
             <div className="text-sm text-center my-5 ">
                 {new Date().toLocaleDateString(undefined, {
@@ -25,7 +26,7 @@ const Footer = () => {
             </div>
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 {/* Logo / Name */}
-                <div className="text-xl font-bold">Sajjad <span className='text-teal-700'>JIM.</span></div>
+                <div className="2xl:text-3xl md:text-2xl text-xl font-bold">Sajjad <span className='text-[#33A1E0]'>JIM.</span></div>
 
                 {/* Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium">
@@ -61,6 +62,7 @@ const Footer = () => {
                 © {new Date().getFullYear()} Jim. All rights reserved.
             </div>
         </footer>
+       </div>
     );
 };
 

@@ -56,7 +56,9 @@ const ContactSection = () => {
   });
 
   return (
-    <section className="w-full min-h-screen bg-black flex flex-col justify-center items-center md:px-4 px-2 md:pt-25 pt-20">
+    <section className="w-full min-h-screen 
+    bg-gradient-to-br from-gray-900/70 via-blue-950/40  to-violet-950/40 
+    flex flex-col justify-center items-center md:px-4 px-2 md:pt-25 pt-20">
       <h2 className="2xl:text-4xl md:text-3xl text-2xl flex gap-2 font-bold mb-10 text-center text-white">
         Contact Me
         <IoShareSocialSharp />
@@ -77,12 +79,17 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="flex border-teal-600 border-t-3 border-r-1 border-b-0 border-l-0 flex-col items-center justify-center p-6 rounded-2xl border  shadow-md hover:shadow-lg  hover:shadow-teal-900 hover:scale-105  group bg-gradient-to-br from-teal-900/10 to-teal-900/40 cursor-pointer hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300"
+            className="flex border-blue-950 border-2  flex-col items-center justify-center p-6 rounded-2xl   shadow-md hover:shadow-lg 
+             hover:shadow-blue-900 hover:scale-105  group
+              bg-gradient-to-br from-gray-900  to-blue-900/40   
+              cursor-pointer 
+              hover:bg-gradient-to-br hover:from-gray-900  hover:to-blue-900 
+              transition duration-300"
           >
             <span className="transition-colors duration-300 group-hover:text-blue-400">
               {contact.icon}
             </span>
-            <span className="mt-2 font-medium text-gray-200 hover:text-teal-400 transition-colors duration-300">
+            <span className="mt-2 font-medium text-gray-200  transition-colors duration-300">
               {contact.name}
             </span>
           </motion.a>

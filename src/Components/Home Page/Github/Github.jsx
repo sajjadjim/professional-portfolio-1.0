@@ -7,7 +7,7 @@ const Github = () => {
 
         >
             <h1 className='text-left not-last:2xl:text-3xl text-2xl  py-5 relative 2xl:right-55 font-bold'>Github states.</h1>
-            <motion.div className="flex justify-center my-8 2xl:block lg:hidden"
+            <motion.div className="flex justify-center my-8 2xl:ml-10 2xl:block lg:hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
@@ -15,7 +15,7 @@ const Github = () => {
             // , delay: 0.2
             >
                 <img
-                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sajjadjim&theme=blue_green"
+                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sajjadjim&theme=yeblu"
                     alt="GitHub Profile Summary"
                     className="max-w-full h-auto"
                 />

@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 shadow-md bg-black/30 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 shadow-md bg-gradient-to-br from-gray-900  to-gray-900/30 backdrop-blur-md">
       <div className="lg:w-11/12 2xl:w-10/12 mx-auto w-full flex justify-between items-center py-3 md:py-4 px-4">
 
         {/* Logo - animate on desktop */}
@@ -42,7 +42,7 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link to='/'>Sajjad <span className="text-teal-600">JIM.</span></Link>
+          <Link to='/'>Sajjad <span className="text-[#33A1E0]">JIM.</span></Link>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <Link
                   to={to}
                   className={`group flex items-center gap-1 transition relative font-medium 
-                    ${isActive ? 'text-teal-500' : 'hover:text-teal-500'}`}
+                    ${isActive ? 'text-[#33A1E0]' : 'hover:text-[#33A1E0]'}`}
                 >
                   {label}
                   <Icon
@@ -92,7 +92,7 @@ const Navbar = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-black/60 backdrop-blur-md"
+            className="md:hidden overflow-hidden items-center text-center justify-center grid "
           >
             <ul className="px-4 pb-4 shadow-md font-medium space-y-3">
               {navItems.map(({ label, to, Icon }) => {
@@ -103,7 +103,7 @@ const Navbar = () => {
                     to={to}
                     onClick={handleLinkClick}
                     className={`group flex items-center gap-1 transition relative font-medium text-white
-                      ${isActive ? 'text-teal-500' : 'hover:text-teal-500'}`}
+                      ${isActive ? 'text-[#33A1E0]' : 'hover:text-[#33A1E0]'}`}
                   >
                     {label}
                     <Icon

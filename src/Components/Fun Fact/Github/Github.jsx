@@ -33,10 +33,10 @@ const Github = () => {
     <div className="p-4">
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold flex items-center justify-center gap-2">
-          <FaGithub className="text-black text-4xl" />
+          <FaGithub className=" text-4xl" />
           GitHub User Lookup
         </h1>
-        <p className="text-gray-600">Enter a username to fetch GitHub profile</p>
+        <p className="text-gray-300">Enter a username to fetch GitHub profile</p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-2 mb-4 max-w-md mx-auto w-full">

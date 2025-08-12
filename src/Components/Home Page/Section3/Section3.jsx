@@ -35,7 +35,7 @@ export default function Section3() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="card border-t-7 shadow-md shadow-teal-900 border-teal-700 border-r-2 bg-[#111] w-96 mx-auto hover:shadow-lg transition"
+            className="card  shadow-md shadow-blue-950 border-1 border-blue-900/70  w-96 mx-auto hover:shadow-lg transition"
         >
             {/* ... your existing render code for project card ... */}
             <figure className="hover:opacity-80 transition duration-200 cursor-pointer">
@@ -57,7 +57,9 @@ export default function Section3() {
                     </div>
                 </div>
             </figure>
-            <div className="card-body bg-gradient-to-br from-teal-900/10 to-teal-900/40 cursor-pointer hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300">
+            <div className="card-body bg-gradient-to-br from-gray-900  to-gray-900/30 cursor-pointer 
+            hover:bg-gradient-to-br hover:from-gray-800/40 hover:to-blue-900/30 
+            transition duration-300">
                 <h2 className="card-title">
                     {project.name}
                     <div className="badge bg-linear-to-r from-cyan-500 to-blue-500">{project.category}</div>
@@ -76,7 +78,7 @@ export default function Section3() {
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-sm bg-teal-600 rounded-lg hover:bg-[#111] hover:border-[1px] hover:border-teal-500 hover:text-teal-600 transition duration-400"
+                            className="btn btn-sm bg-blue-900 rounded-lg hover:bg-transparent hover:border-[1px] hover:border-blue-950 hover:text-white transition duration-400"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <FaExternalLinkAlt className="inline mr-1" /> Live View
@@ -87,7 +89,7 @@ export default function Section3() {
                             href={project.clientCode}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-sm rounded-lg border-teal-600 text-teal-600 hover:text-white hover:bg-teal-600 transition duration-400"
+                            className="btn btn-sm rounded-lg border-blue-900  bg-transparent  hover:text-white hover:bg-blue-900 transition duration-400"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <FaCode className="inline mr-1" /> Client Side
@@ -98,7 +100,7 @@ export default function Section3() {
                             href={project.serverCode}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-sm rounded-lg bg-[#111] btn-outline border-teal-600 text-teal-600 hover:text-white hover:bg-teal-600 transition duration-400"
+                            className="btn btn-sm rounded-lg border-blue-900  bg-transparent  hover:text-white hover:bg-blue-900 transition duration-400"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <FaServer className="inline mr-1" /> Server Side
@@ -172,7 +174,7 @@ export default function Section3() {
                             swiperRef.current.slideTo(newIndex);
                         }}
                         disabled={activeIndex === 0}
-                        className={`bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 py-1 rounded-full shadow-md flex items-center gap-2 transition duration-400 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={` bg-blue-900 cursor-pointer hover:border-blue-950/50 hover:border-[1px]  px-6 2xl:py-2 py-1 rounded-full shadow-md flex items-center gap-2 transition duration-400 ${activeIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         <ArrowLeft size={18} /> Prev
                     </button>
@@ -184,7 +186,7 @@ export default function Section3() {
                             swiperRef.current.slideTo(newIndex);
                         }}
                         disabled={activeIndex >= maxSlideIndex}
-                        className={`bg-teal-600 hover:bg-black cursor-pointer hover:border-teal-500 hover:border-[1px] hover:text-teal-500 text-white px-6 2xl:py-2 py-1 rounded-full shadow-md flex items-center gap-2 transition duration-400 ${activeIndex >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`bg-blue-900 cursor-pointer hover:border-blue-950/50 hover:border-[1px]  px-6 2xl:py-2 py-1 rounded-full shadow-md flex items-center gap-2 transition duration-400 ${activeIndex >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         Next <ArrowRight size={18} />
                     </button>
@@ -212,14 +214,14 @@ export default function Section3() {
             <div className="flex justify-center mt-10">
                 <button
                     onClick={() => setShowMore((prev) => !prev)}
-                    className="relative inline-block px-5 py-2 font-semibold rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg hover:scale-90 hover:shadow-2xl transition-all duration-300 group overflow-hidden hover:text-white"
+                    className="relative inline-block px-5 py-2 font-semibold rounded-full bg-blue-900 cursor-pointer shadow-lg hover:scale-102 hover:shadow-2xl transition-all duration-300 group overflow-hidden "
                 >
                     <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300 rounded-full"></span>
                     <span className="relative z-10 tracking-wide flex items-center gap-2">
                         {showMore ? 'Show Less' : 'Show More'}
-                        <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        {/* <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                        </svg> */}
                     </span>
                 </button>
             </div>

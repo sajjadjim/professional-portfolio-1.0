@@ -58,14 +58,14 @@ const cardVariants = [
 
 const EducationCard = ({ level, institution, degree, year, description, cgpa,location, motionStyle }) => (
    <motion.div
-    className="bg-gradient-to-br from-gray-900 via-black border-t-4 border-r-1 to-gray-800 shadow-xl rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-102 hover:shadow-teal-800 duration-300 border-teal-500"
+    className="bg-gradient-to-br from-gray-900  to-blue-950/30  border-2  shadow-lg rounded-3xl p-8 w-full md:w-1/2 lg:w-1/3 transition-transform hover:scale-101 hover:shadow-blue-900 duration-300 border-blue-950"
     initial={motionStyle.initial}
     whileInView={motionStyle.animate}
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
   >
     <div className="flex justify-between items-center mb-4">
-      <h3 className="text-2xl font-bold text-teal-500 tracking-wide flex items-center gap-2">
+      <h3 className="text-2xl font-bold text-blue-300 tracking-wide flex items-center gap-2">
         <FaGraduationCap /> {level}
       </h3>
       <span className="bg-black  px-3 py-1 bg-linear-to-r from-cyan-500 to-blue-600 rounded-full text-xs font-semibold shadow  flex items-center gap-1">
@@ -77,10 +77,10 @@ const EducationCard = ({ level, institution, degree, year, description, cgpa,loc
       <FaUniversity /> {institution}
     </p>
     <p className='text-sm text-white mb-1 flex items-center gap-2'><SlLocationPin></SlLocationPin>{location}</p>
-    <p className="text-md text-teal-500 font-medium mb-1 flex items-center gap-2">
+    <p className="text-md text-blue-300 font-medium mb-1 flex items-center gap-2">
       🎓 {degree}
     </p>
-    <p className="text-md text-teal-500 font-medium mb-3 flex items-center gap-2">
+    <p className="text-md text-blue-300 font-medium mb-3 flex items-center gap-2">
      {cgpa}
     </p>
 
@@ -96,11 +96,11 @@ const EducationSection = () => {
   return (
     <section className="md:w-11/12 2xl:9/12 mx-auto pt-20">
       <h1 className="md:text-3xl 2xl:text-6xl text-3xl font-bold text-center my-10 pacifico-regular">
-        <span className="text-teal-500">&lt;</span> I'm Sajjad JIM <span className="text-teal-500">/&gt;</span>
+        <span className="text-blue-500">&lt;</span> I'm Sajjad JIM <span className="text-blue-500">/&gt;</span>
       </h1>
 
       <div>
-        <p className="text-center 2xl:text-2xl lg:text-lg text-sm text-teal-500">
+        <p className="text-center 2xl:text-2xl lg:text-lg text-sm text-gray-400">
           Hi I am Jim . I am a student of computer Science And Engineering at Daffodil International University . My biggest goal in my life is to be a kind person .I want to achieve success in every step of my life .I always want to hard work for myself , my family and my country .
         </p>
         <div className="grid justify-center justify-items-center">
@@ -108,7 +108,7 @@ const EducationSection = () => {
             href="https://drive.google.com/file/d/1gmEiCATd3Ajv19ggxPmlC1B-R832x5IY/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className="py-2 flex gap-2 items-center bg-teal-500 font-bold text-white hover:text-teal-500 hover:border-[1px] hover:bg-black hover:border-teal-700 px-10 rounded-full my-5 cursor-pointer transition-colors duration-300"
+            className="py-2 flex gap-2 items-center bg-blue-500 font-bold text-white hover:text-blue-500 hover:border-[1px] hover:bg-transparent hover:border-blue-500 px-10 rounded-full my-5 cursor-pointer transition-colors duration-300"
             download
           >
             CV <RiDownloadLine className="text-xl animate-bounce" />

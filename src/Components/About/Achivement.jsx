@@ -9,8 +9,8 @@ import { GiLaurelsTrophy } from "react-icons/gi";
 
 const Achievement = () => {
   return (
-    <div className=' bg-black'>
-      <div className='2xl:max-w-9/12 lg:w-11/12 mx-auto'>
+    <div className=''>
+      <div className='2xl:max-w-9/12 lg:w-11/12 mx-auto pb-25'>
         <h2 className="text-2xl 2xl:text-4xl md:my-10 my-5 md:mx-0 flex gap-2 text-white font-bold text-left pb-3">
           <GiLaurelsTrophy></GiLaurelsTrophy>  Achievement.
         </h2>

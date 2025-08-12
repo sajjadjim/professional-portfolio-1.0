@@ -90,7 +90,8 @@ const Section2 = () => {
           <motion.button
             variants={buttonVariants}
             className="relative group overflow-hidden 2xl:py-6 lg:py-3 lg:px-2 py-2 2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
-      text-white border-2 border-cyan-500 bg-transparent transition-all duration-500 ease-in-out z-10"
+      text-white border-2 border-[#33A1E0]
+      bg-transparent transition-all duration-500 ease-in-out z-10"
           >
             <span className="relative z-10">
               Coding Experience <br />
@@ -130,7 +131,8 @@ const Section2 = () => {
           <motion.button
             variants={buttonVariants}
             className="relative group overflow-hidden 2xl:py-6 py-2 2xl:px-5 font-bold w-full rounded-xl md:text-xl 2xl:text-3xl
-      text-white border-2 border-cyan-500 bg-transparent transition-all duration-500 ease-in-out z-10"
+      text-white border-2 border-[#33A1E0]
+      bg-transparent transition-all duration-500 ease-in-out z-10"
           >
             <span className="relative z-10 text-center block">
               Projects <br /> {count}+ Completed
@@ -152,7 +154,7 @@ const Section2 = () => {
         >
           <p className=" mb-6">
             I'm a passionate Computer Science and Engineering student at
-            <span className="text-teal-500 font-semibold"> Daffodil International University</span>.
+            <span className="text-[#33A1E0] font-semibold"> Daffodil International University</span>.
             Through my academic journey and personal projects, I've developed strong programming and
             problem-solving skills that help me tackle real-world challenges effectively.
           </p>

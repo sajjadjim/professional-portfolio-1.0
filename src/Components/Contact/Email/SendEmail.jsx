@@ -40,48 +40,51 @@ const SendEmail = () => {
   };
 
   return (
-    <div className="flex w-full mx-auto justify-center items-center md:min-h-[50vh]  rounded-2xl shadow-lg">
+    <div className="flex w-full mx-auto justify-center items-center md:min-h-[50vh] py-20  rounded-2xl shadow-lg">
       <form
         ref={form}
         onSubmit={sendEmail}
-        className=" md:p-8 rounded-xl shadow-md flex flex-col gap-6 md:w-full md:max-w-4xl bg-gradient-to-br from-teal-900/10 to-teal-900/40  hover:bg-gradient-to-br hover:from-teal-900/20 hover:to-teal-900/60 transition duration-300"
+        className=" md:p-8 rounded-xl shadow-md flex flex-col gap-6 md:w-full md:max-w-4xl 
+        bg-gradient-to-br from-gray-900  to-blue-900/40 
+        hover:bg-gradient-to-br hover:from-gray-900  hover:to-blue-950
+        transition duration-300"
       >
-        <h2 className="mb-3 text-teal-700 font-bold text-2xl text-center">Email Me</h2>
+        <h2 className="mb-3  font-bold text-2xl text-center">Email Me</h2>
         <div className="flex flex-row gap-4">
           <div className="flex-1">
-            <label className="text-teal-700 font-medium">Name</label>
+            <label className=" font-medium">Name</label>
             <input
               type="text"
               name="user_name"
               required
-              className="mt-1 px-3 py-2 border border-indigo-200 rounded-md text-base outline-none focus:border-teal-400 transition w-full"
+              className="mt-1 px-3 py-2 border border-indigo-200 rounded-md text-base outline-none focus:border-blue-400 transition w-full"
             />
           </div>
           <div className="flex-1">
-            <label className="text-teal-700 font-medium">Email</label>
+            <label className=" font-medium">Email</label>
             <input
               type="email"
               name="user_email"
               required
-              className="mt-1 px-3 py-2 border border-indigo-200 rounded-md text-base outline-none focus:border-teal-600 transition w-full"
+              className="mt-1 px-3 py-2 border border-indigo-200 rounded-md text-base outline-none focus:border-blue-600 transition w-full"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-teal-700 font-medium">Message</label>
+          <label className=" font-medium">Message</label>
           <textarea
             name="message"
             required
             rows={5}
-            className="px-3 py-2 border border-indigo-200 rounded-md text-base resize-vertical outline-none focus:border-teal-600 transition"
+            className="px-3 py-2 border border-indigo-200 rounded-md text-base resize-vertical outline-none focus:border-blue-600 transition"
           />
         </div>
 
         <input
           type="submit"
           value="Send"
-          className="bg-gradient-to-r from-teal-500 to-indigo-400 text-white border-none rounded-md py-3 font-semibold text-base cursor-pointer mt-2 transition hover:from-teal-600 hover:to-indigo-500"
+          className="bg-gradient-to-r from-blue-500 to-indigo-400 text-white border-none rounded-md py-3 font-semibold text-base cursor-pointer mt-2 transition hover:from-blue-600 hover:to-indigo-500"
         />
       </form>
     </div>

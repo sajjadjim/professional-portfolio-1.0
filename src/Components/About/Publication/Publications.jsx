@@ -37,17 +37,17 @@ const Publications = () => {
         {publications.map((pub, index) => (
           <motion.div
             key={index}
-            className="border border-teal-500 rounded-2xl p-6 bg-gradient-to-br from-teal-900/10 to-teal-900/40  hover:bg-gradient-to-br hover:from-teal-900/10 hover:to-teal-900/20  shadow-md hover:shadow-teal-700 transition-shadow duration-300"
+            className="border border-gray-800 rounded-2xl p-6 bg-gradient-to-br from-gray-900 to-gray-900/10  hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-900/40  shadow-lg hover:shadow-blue-950 transition-shadow duration-300 cursor-pointer"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold text-teal-500 mb-2 flex items-center gap-2">
+            <h3 className="text-xl font-semibold text-gray-300 mb-2 flex items-center gap-2">
               <FaFileAlt /> {pub.title}
             </h3>
             <div className="mb-4">
-              <p className="text-sm text-gray-300 font-medium mb-1 flex items-center gap-1">
+              <p className="text-sm text-gray-400 font-medium mb-1 flex items-center gap-1">
                 <FaUserGraduate className="" />
                 <span>Authors:</span>
               </p>
@@ -61,7 +61,7 @@ const Publications = () => {
               href={pub.certificateLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-teal-400 hover:text-teal-200 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-blue-300 hover:text-blue-500 transition-colors"
             >
               View Certificate <FaExternalLinkAlt />
             </a>

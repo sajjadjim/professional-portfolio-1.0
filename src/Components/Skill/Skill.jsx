@@ -71,7 +71,7 @@ const itemVariants = {
 
 const SkillGroup = ({ title, skills }) => (
   <div className="mb-10">
-    <h3 className="text-xl font-semibold text-teal-400 mb-4">{title}</h3>
+    <h3 className="text-xl font-semibold text-gray-200 mb-4">{title}</h3>
 
     <motion.div
       className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
@@ -84,7 +84,7 @@ const SkillGroup = ({ title, skills }) => (
         <motion.div
           key={skill.name}
           variants={itemVariants}
-          className="group flex flex-col items-center justify-center bg-white dark:bg-black border hover:border-teal-500 hover:shadow-md hover:shadow-teal-500 border-gray-200 dark:border-gray-700 rounded-2xl p-4 transition transform hover:scale-105 cursor-pointer"
+          className="group flex flex-col items-center justify-center  bg-gradient-to-br from-gray-950 to-blue-950/30 border-2 hover:border-blue-900 hover:shadow-md hover:shadow-blue-900 border-blue-950  rounded-2xl p-4 transition transform hover:scale-101 cursor-pointer"
           title={skill.name}
           whileHover={{ scale: 1.08 }}
         >

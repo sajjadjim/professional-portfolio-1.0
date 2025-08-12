@@ -13,7 +13,7 @@ function HomePage() {
     // This will set the document title to 'Sajjad JIM' when the component mounts
   })
   return (
-    <div className='bg-black'>
+    <div className='bg-gradient-to-br from-gray-900/70 via-blue-950/40  to-violet-950/40'>
       <Section1></Section1>
       <Section2></Section2>
       <DevIconsMarquee></DevIconsMarquee>

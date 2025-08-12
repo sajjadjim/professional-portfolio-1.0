@@ -37,7 +37,7 @@ const icons = [
 
 export default function DevIconsMarquee() {
   return (
-    <div className="2xl:w-10/12 lg:w-11/12 w-full mx-auto  py-15 bg-black overflow-hidden relative">
+    <div className="2xl:w-10/12 lg:w-11/12 w-full mx-auto  py-15  overflow-hidden relative">
       <h1 className="2xl:text-3xl text-2xl font-bold mb-5">Dev tools. </h1>
       <motion.div
         className="flex gap-12 absolute whitespace-nowrap"

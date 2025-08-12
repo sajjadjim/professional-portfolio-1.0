@@ -39,7 +39,7 @@ const Home = () => {
             <div style={{ flex: 1 }}>
                 <Outlet />
             </div>
-            <div className='bg-black'><Footer /></div>
+            <div className='bg-bg-gradient-to-br from-gray-900/70 via-blue-950/40  to-violet-950/40'><Footer /></div>
 
             {/* Rocket Launch Overlay */}
             {launching && (
@@ -55,7 +55,7 @@ const Home = () => {
             {showTopBtn && !launching && (
                 <button
                     onClick={scrollToTopWithRocket}
-                    className="fixed bottom-5 cursor-pointer right-5 lg:p-2 2xl:p-4 p-3 rounded-full bg-teal-600 text-white shadow-lg hover:text-teal-600 hover:border-teal-600 hover:border hover:bg-transparent transition duration-300 z-50"
+                    className="fixed bottom-5 cursor-pointer right-5 lg:p-2 2xl:p-4 p-3 rounded-full bg-blue-600 text-white shadow-lg  hover:border-blue-600 hover:border hover:bg-transparent transition duration-300 z-50"
                     aria-label="Scroll to Top"
                 >
                     <BsFillRocketFill />
