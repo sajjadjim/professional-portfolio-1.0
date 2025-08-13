@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, Code, User, Mail, Sparkles } from 'lucide-react';
+import { Menu, X, Home, Code, User, Mail, Sparkles, BookOpen } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,15 +13,14 @@ const Navbar = () => {
     { label: 'Projects', to: '/project', Icon: Code },
     { label: 'About', to: '/about', Icon: User },
     { label: 'Contact', to: '/contact', Icon: Mail },
+    { label: 'Blog', to: '/blog', Icon: BookOpen },
     { label: 'Fun Fact', to: '/fun-fact', Icon: Sparkles },
   ];
 
-  // Close mobile menu on link click
   const handleLinkClick = () => {
     if (window.innerWidth < 768) setIsOpen(false);
   };
 
-  // Animation variants for desktop nav links
   const desktopNavVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: (i) => ({
@@ -31,11 +30,15 @@ const Navbar = () => {
     }),
   };
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 shadow-md bg-gradient-to-br from-gray-900  to-gray-900/30 backdrop-blur-md">
-      <div className="lg:w-11/12 2xl:w-10/12 mx-auto w-full flex justify-between items-center py-3 md:py-4 px-4">
+  // icon reveal animation (used for both desktop & mobile)
+  const iconVariants = {
+    hide: { opacity: 0, x: -6 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.18 } },
+  };
 
-        {/* Logo - animate on desktop */}
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 shadow-md bg-gradient-to-br from-gray-900 to-gray-900/30 backdrop-blur-md">
+      <div className="lg:w-11/12 2xl:w-10/12 mx-auto w-full flex justify-between items-center py-3 md:py-4 px-4">
         <motion.div
           className="2xl:text-3xl text-2xl font-bold cursor-pointer text-white"
           initial={{ opacity: 0, x: -30 }}
@@ -45,7 +48,7 @@ const Navbar = () => {
           <Link to='/'>Sajjad <span className="text-[#33A1E0]">JIM.</span></Link>
         </motion.div>
 
-        {/* Desktop Menu */}
+        {/* Desktop nav */}
         <ul className="hidden md:flex gap-8">
           {navItems.map(({ label, to, Icon }, i) => {
             const isActive = location.pathname === to;
@@ -60,22 +63,28 @@ const Navbar = () => {
                 <Link
                   to={to}
                   className={`group flex items-center gap-1 transition relative font-medium 
-                    ${isActive ? 'text-[#33A1E0]' : 'hover:text-[#33A1E0]'}`}
+                    ${isActive ? 'text-[#33A1E0]' : 'text-white hover:text-[#33A1E0]'}`}
                 >
                   {label}
-                  <Icon
-                    size={16}
-                    className={`transition absolute right-[-20px] 
+                  {/* icon: absolute on desktop, animates in on hover, visible when active */}
+                  <motion.span
+                    variants={iconVariants}
+                    initial="hide"
+                    animate={isActive ? 'show' : 'hide'}
+                    whileHover="show"
+                    className={`md:absolute md:right-[-20px] md:ml-0 ml-2 inline-flex items-center
                       ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                     aria-hidden="true"
-                  />
+                  >
+                    <Icon size={16} className="stroke-current" />
+                  </motion.span>
                 </Link>
               </motion.li>
             );
           })}
         </ul>
 
-        {/* Mobile Toggle */}
+        {/* Burger */}
         <div className="md:hidden">
           <button onClick={toggleMenu} aria-label="Toggle menu" className="text-white">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -83,7 +92,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu - AnimatePresence for smooth mount/unmount */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -102,16 +111,21 @@ const Navbar = () => {
                     key={label}
                     to={to}
                     onClick={handleLinkClick}
-                    className={`group flex items-center gap-1 transition relative font-medium text-white
-                      ${isActive ? 'text-[#33A1E0]' : 'hover:text-[#33A1E0]'}`}
+                    className={`group flex items-center justify-center gap-2 transition relative font-medium 
+                      ${isActive ? 'text-[#33A1E0]' : 'text-white hover:text-[#33A1E0]'}`}
                   >
-                    {label}
-                    <Icon
-                      size={16}
-                      className={`transition absolute right-[-20px] 
-                        ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                    {/* icon inline on mobile so it's never clipped; shows when active, or on hover */}
+                    <motion.span
+                      variants={iconVariants}
+                      initial="hide"
+                      animate={isActive ? 'show' : 'hide'}
+                      whileHover="show"
+                      className={`${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                       aria-hidden="true"
-                    />
+                    >
+                      <Icon size={16} className="stroke-current" />
+                    </motion.span>
+                    {label}
                   </Link>
                 );
               })}

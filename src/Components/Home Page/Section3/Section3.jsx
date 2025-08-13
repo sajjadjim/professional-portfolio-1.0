@@ -35,7 +35,7 @@ export default function Section3() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="card  shadow-md shadow-blue-950 border-1 border-blue-900/70  w-96 mx-auto hover:shadow-lg transition"
+            className="card  shadow-md shadow-blue-900 border-1  border-blue-900/70  w-96 mx-auto hover:shadow-lg transition"
         >
             {/* ... your existing render code for project card ... */}
             <figure className="hover:opacity-80 transition duration-200 cursor-pointer">
@@ -57,8 +57,9 @@ export default function Section3() {
                     </div>
                 </div>
             </figure>
-            <div className="card-body bg-gradient-to-br from-gray-900  to-gray-900/30 cursor-pointer 
-            hover:bg-gradient-to-br hover:from-gray-800/40 hover:to-blue-900/30 
+            {/* card details information here working */}
+            <div className="card-body bg-gradient-to-br from-gray-900  to-gray-900/30 cursor-pointer
+            hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-violet-950/30
             transition duration-300">
                 <h2 className="card-title">
                     {project.name}

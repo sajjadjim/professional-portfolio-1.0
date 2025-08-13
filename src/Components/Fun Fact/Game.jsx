@@ -3,7 +3,7 @@ import SimpleRunner from './Game/SimpleRunner';
 
 const UserGames = () => {
   return (
-    <div className="min-h-screen  bg-black  px-4">
+    <div className="min-h-screen    px-4">
       <div className="">
         
 <SimpleRunner></SimpleRunner>

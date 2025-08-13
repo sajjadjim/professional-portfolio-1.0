@@ -47,7 +47,7 @@ const Project = () => {
                 <div className="flex flex-col items-center gap-4">
                     <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
                     <p className="text-white text-lg font-semibold">
-                        {error ? "Failed to load projects. Retrying..." : "Loading projects..."}
+                        {error ? "Failed to load projects. Retrying..." : "Loading Projects 📂📂📂"}
                     </p>
                 </div>
             </div>
@@ -87,7 +87,7 @@ const Project = () => {
                     </div>
                 )}
 
-{/* button prev next and number pazination code here  */}
+                {/* button prev next and number pazination code here  */}
                 <div className="flex justify-center mt-10 gap-4 pb-15 items-center">
                     <button
                         onClick={handlePrev}

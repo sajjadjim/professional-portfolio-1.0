@@ -116,7 +116,7 @@ const Section4 = () => {
       <div className="absolute md:w-350   top-1/4 left-1/2 transform -translate-x-1/2 z-20   bg-opacity-60  py-6 rounded-lg grid justify-center  text-2xl">
         <h2 className="mb-4 2xl:text-5xl lg:text-3xl text-2xl font-semibold text-center">{pages[index].title}</h2>
         <div
-          className=" text-left text-lg"
+          className=" text-left text-md md:text-xl 2xl:text-2xl"
           dangerouslySetInnerHTML={{ __html: typedHTML }}
         />
       </div>

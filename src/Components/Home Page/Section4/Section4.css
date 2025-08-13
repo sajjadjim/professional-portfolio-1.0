@@ -22,7 +22,7 @@
 
 .section4-backgrounds {
   height: 300vh; /* 3 pages x 100vh */
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 
 .section4-page {
