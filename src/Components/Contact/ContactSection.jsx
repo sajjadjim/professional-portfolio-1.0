@@ -60,7 +60,7 @@ const ContactSection = () => {
   const [contacts, setContacts] = useState(baseContactInfo);
 
   useEffect(() => {
-    document.title = "Contact";
+    document.title = "Contact - Sajjad JIM";
   }, []);
 
   // Shuffle order on mount (Fisher–Yates)

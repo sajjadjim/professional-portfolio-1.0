@@ -1,5 +1,5 @@
 // src/pages/Blogs.jsx
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Link } from "react-router";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
@@ -108,6 +108,11 @@ const formatDate = (iso) =>
   });
 
 export default function Blogs() {
+ 
+  useEffect(()=>{
+    document.title = "Blogs - Sajjad JIM"
+  })
+
   const randomIndex = useMemo(
     () => Math.floor(Math.random() * dailyPosts.length),
     []

@@ -12,6 +12,9 @@ const Project = () => {
 
     const projectsPerPage = 4;
 
+    useEffect(()=>{
+        document.title = "Projects - Sajjad JIM"
+    })
     useEffect(() => {
         const fetchData = async () => {
             try {

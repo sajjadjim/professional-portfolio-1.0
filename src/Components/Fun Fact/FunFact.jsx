@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Game from './Game';
 import Github from './Github/Github';
 import { Star } from 'lucide-react';
@@ -6,6 +6,9 @@ import { Star } from 'lucide-react';
 const FunFact = () => {
   const [activeComponent, setActiveComponent] = React.useState('');
 
+  useEffect(()=>{
+    document.title = "Fun Fact - Sajjad JIM"
+  })
   const buttons = [
     { key: 'game', label: '🎮 Game' },
     { key: 'github', label: '🏆 GitHub' }
