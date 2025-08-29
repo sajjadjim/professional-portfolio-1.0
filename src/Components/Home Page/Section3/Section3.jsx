@@ -8,6 +8,17 @@ import { FreeMode, Pagination } from 'swiper/modules';
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaExternalLinkAlt, FaCode, FaServer, FaEye } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaFire } from 'react-icons/fa';
+import { TbBrandTailwind } from "react-icons/tb";
+import { RiNextjsFill } from "react-icons/ri";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiNextdotjs } from 'react-icons/si';
+import { SiJavascript } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { FaDocker } from "react-icons/fa";
+
+
 
 export default function Section3() {
     const swiperRef = useRef(null);
@@ -35,7 +46,7 @@ export default function Section3() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="card  shadow-md shadow-blue-900 border-1  border-blue-900/70  w-96 mx-auto hover:shadow-lg transition"
+            className="card shadow-md shadow-blue-900 border-1 border-blue-900/70 w-96 mx-auto hover:shadow-lg transition"
         >
             {/* ... your existing render code for project card ... */}
             <figure className="hover:opacity-80 transition duration-200 cursor-pointer">
@@ -57,8 +68,8 @@ export default function Section3() {
                     </div>
                 </div>
             </figure>
-            {/* card details information here working */}
-            <div className="card-body bg-gradient-to-br from-gray-900  to-gray-900/30 cursor-pointer
+            {/* card details information here */}
+            <div className="card-body bg-gradient-to-br from-gray-900 to-gray-900/30 cursor-pointer
             hover:bg-gradient-to-br hover:from-blue-900/40 hover:to-violet-950/30
             transition duration-300">
                 <h2 className="card-title">
@@ -68,8 +79,22 @@ export default function Section3() {
                 <p className='dancing-script'>{project.description}</p>
                 <div className="card-actions justify-end flex-wrap">
                     {project.technologies?.map((tech, techIndex) => (
-                        <div key={techIndex} className="badge 2xl:block lg:hidden block badge-outline">
+                        <div key={techIndex} className="badge 2xl:block lg:hidden block border-t-[1px] badge-outline border-blue-500">
                             {tech}
+                            {/* Show icons based on technology */}
+                            {tech === 'React' && <FaReact className="ml-2 text-blue-400 inline-block" />}
+                            {tech === 'Firebase' && <FaFire className="ml-2 text-red-400 inline-block" />}
+                            {tech === 'Node.js' && <FaNodeJs className="ml-2 text-green-400 inline-block" />}
+                            {tech === 'Express.js' && <SiExpress className="ml-2 inline-block" />}
+                            {tech === 'HTML' && <FaHtml5 className="ml-2 inline-block" />}
+                            {tech === 'CSS' && <FaCss3Alt className="ml-2 inline-block" />}
+                            {tech === 'Next.js' && <SiNextdotjs className="ml-2 inline-block" />}
+                            {tech === 'MongoDB' && <SiMongodb className="ml-2 text-green-600 inline-block" />}
+                            {tech === 'Tailwind CSS' && <TbBrandTailwind className="ml-2 text-cyan-400 inline-block" />}
+                            {tech === 'Next.js' && <RiNextjsFill className="ml-2 text-white inline-block" />}
+                            {tech === 'JavaScript' && <SiJavascript className="ml-2 text-yellow-400 inline-block" />}
+                            {tech === 'TypeScript' && <SiTypescript className="ml-2 text-blue-600 inline-block" />}
+                            {tech === 'Docker' && <FaDocker className="ml-2 text-blue-400 inline-block" />}
                         </div>
                     ))}
                 </div>
@@ -90,7 +115,7 @@ export default function Section3() {
                             href={project.clientCode}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-sm rounded-lg border-blue-900  bg-transparent  hover:text-white hover:bg-blue-900 transition duration-400"
+                            className="btn btn-sm rounded-lg border-blue-900 bg-transparent hover:text-white hover:bg-blue-900 transition duration-400"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <FaCode className="inline mr-1" /> Client Side
@@ -101,7 +126,7 @@ export default function Section3() {
                             href={project.serverCode}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-sm rounded-lg border-blue-900  bg-transparent  hover:text-white hover:bg-blue-900 transition duration-400"
+                            className="btn btn-sm rounded-lg border-blue-900 bg-transparent hover:text-white hover:bg-blue-900 transition duration-400"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <FaServer className="inline mr-1" /> Server Side
@@ -111,6 +136,7 @@ export default function Section3() {
             </div>
         </motion.div>
     );
+
 
     // Total slides count for first 3 projects (0 to 2)
     const maxIndex = Math.max(0, projectData.length > 3 ? 3 - 1 : projectData.length - 1);
