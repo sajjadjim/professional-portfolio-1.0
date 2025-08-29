@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './section4.css';
 import { motion } from 'framer-motion';
 const pages = [
   {
@@ -6,7 +7,7 @@ const pages = [
     bg: '',
     title: 'Problem Solving',
     text: `
-      <ul class="md:list-disc list-none flex gap-5 list-inside mt-2">
+      <ul class="md:list-disc  list-none flex gap-5 list-inside mt-2">
         <li>Python</li>
         <li>C</li>
         <li>C++</li>

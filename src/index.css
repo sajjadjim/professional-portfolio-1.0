@@ -1,11 +1,20 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-* {
+body {
   font-family: "Parkinsans", sans-serif;
 
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Exo 2", sans-serif;
+
 }
+
 @keyframes bounce-up {
   0% {
     transform: translateY(50%);

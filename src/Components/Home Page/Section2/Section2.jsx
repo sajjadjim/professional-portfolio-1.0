@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
+import './styles.css';
 
 const Section2 = () => {
   const [projectCount, setProjectCount] = useState(0);
@@ -147,7 +148,7 @@ const Section2 = () => {
 
         {/* Text block with fade + slide up */}
         <motion.div
-          className='2xl:text-xl  lg:text-md '
+          className='2xl:text-xl dancing-script   lg:text-md '
           variants={textVariants}
           initial="hidden"
           animate="visible"

@@ -65,7 +65,7 @@ export default function Section3() {
                     {project.name}
                     <div className="badge bg-linear-to-r from-cyan-500 to-blue-500">{project.category}</div>
                 </h2>
-                <p>{project.description}</p>
+                <p className='dancing-script'>{project.description}</p>
                 <div className="card-actions justify-end flex-wrap">
                     {project.technologies?.map((tech, techIndex) => (
                         <div key={techIndex} className="badge 2xl:block lg:hidden block badge-outline">
@@ -229,8 +229,8 @@ export default function Section3() {
 
             {/* Modal */}
             {selectedProject && (
-                <div className="fixed  inset-0 z-50 flex items-center text-black justify-center backdrop-blur-sm">
-                    <div className="bg-white/80 max-w-md w-full rounded-xl p-6 relative shadow-xl border border-gray-300">
+                <div className="fixed  inset-0 z-50 flex items-center  justify-center backdrop-blur-sm">
+                    <div className="bg-blue-950/60 2xl:max-w-3xl md:max-w-xl max-w-md  w-full rounded-xl p-6 relative shadow-4xl  ">
                         <button
                             onClick={() => setSelectedProject(null)}
                             className="absolute top-3 right-3 text-gray-600 hover:text-red-500"
@@ -238,7 +238,7 @@ export default function Section3() {
                             <X size={20} />
                         </button>
                         <h3 className="text-xl font-bold mb-2">{selectedProject.name}</h3>
-                        <p className="mb-4">{selectedProject.short_description}</p>
+                        <p className="mb-4 exo-2">{selectedProject.short_description}</p>
                         <div>
                             <p className='text-left mb-5 font-bold'>Projects Images.</p>
                             <div className="grid grid-cols-3 gap-2">
