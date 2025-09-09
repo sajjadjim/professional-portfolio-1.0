@@ -79,7 +79,7 @@ export default function Section3() {
                 <p className='dancing-script'>{project.description}</p>
                 <div className="card-actions justify-end flex-wrap">
                     {project.technologies?.map((tech, techIndex) => (
-                        <div key={techIndex} className="badge 2xl:block lg:hidden block border-t-[1px] badge-outline border-blue-500">
+                        <div key={techIndex} className="badge  border-t-[1px] badge-outline border-blue-500">
                             {tech}
                             {/* Show icons based on technology */}
                             {tech === 'React' && <FaReact className="ml-2 text-blue-400 inline-block" />}

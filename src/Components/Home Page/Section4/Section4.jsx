@@ -13,6 +13,7 @@ const pages = [
         <li>C++</li>
         <li>Java</li>
         <li>JavaScript</li>
+        <li>TypeScript</li>
       </ul>
     `,
   },
@@ -22,14 +23,11 @@ const pages = [
     title: 'Frontend',
     text: `
       <ul class="md:list-disc list-none flex gap-5 list-inside mt-2">
-        <li>React</li>
-        <li>Node.js</li>
+        <li>React.js</li>
         <li>Tailwind CSS</li>
-        <li>MongoDB</li>
-        <li>Next.Js</li>
+        <li>Next.js</li>
         <li>HTML</li>
         <li>CSS</li>
-        <li>Firebase</li>
       </ul>
     `,
   },
@@ -44,8 +42,18 @@ const pages = [
         <li>MySQL</li>
         <li>MongoDB</li>
         <li>NextJs</li>
+        <li>PHP</li>
+      </ul>
+    `,
+  },
+    {
+    id: 4,
+    bg: '',
+    title: 'Authentications',
+    text: `
+      <ul class="md:list-disc list-none flex gap-5 list-inside mt-2">
         <li>JWT</li>
-        <li>Firebase</li>
+        <li>Firebase Auth</li>
       </ul>
     `,
   },

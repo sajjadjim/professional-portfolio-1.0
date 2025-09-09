@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaServer, FaGlobe, FaThList, FaThLarge, FaEye } from 'react-icons/fa';
+import { FreeMode, Pagination } from 'swiper/modules';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaFire } from 'react-icons/fa';
+import { TbBrandTailwind } from "react-icons/tb";
+import { RiNextjsFill } from "react-icons/ri";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiNextdotjs } from 'react-icons/si';
+import { SiJavascript } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { FaDocker } from "react-icons/fa";
 
 const Project = () => {
     const [projectData, setProjectData] = useState([]);
@@ -187,7 +197,24 @@ const ProjectSliderCard = ({ project, onSeeMore }) => {
                     <h3 className="font-bold mb-2 ">Technologies Used:</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {technologies.map((tech, i) => (
-                            <span key={i} className="bg-blue-900 cursor-pointer px-3 py-1 text-xs rounded-full text-white shadow-md">{tech}</span>
+                            <span key={i} className="bg-blue-900 cursor-pointer px-3 py-1 text-xs rounded-full text-white shadow-md">{tech}
+                             {tech}
+                                                        {/* Show icons based on technology */}
+                                                        {tech === 'React' && <FaReact className="ml-2 text-blue-400 inline-block" />}
+                                                        {tech === 'Firebase' && <FaFire className="ml-2 text-red-400 inline-block" />}
+                                                        {tech === 'Node.js' && <FaNodeJs className="ml-2 text-green-400 inline-block" />}
+                                                        {tech === 'Express.js' && <SiExpress className="ml-2 inline-block" />}
+                                                        {tech === 'HTML' && <FaHtml5 className="ml-2 inline-block" />}
+                                                        {tech === 'CSS' && <FaCss3Alt className="ml-2 inline-block" />}
+                                                        {tech === 'Next.js' && <SiNextdotjs className="ml-2 inline-block" />}
+                                                        {tech === 'MongoDB' && <SiMongodb className="ml-2 text-green-600 inline-block" />}
+                                                        {tech === 'Tailwind CSS' && <TbBrandTailwind className="ml-2 text-cyan-400 inline-block" />}
+                                                        {tech === 'Next.js' && <RiNextjsFill className="ml-2 text-white inline-block" />}
+                                                        {tech === 'JavaScript' && <SiJavascript className="ml-2 text-yellow-400 inline-block" />}
+                                                        {tech === 'TypeScript' && <SiTypescript className="ml-2 text-blue-600 inline-block" />}
+                                                        {tech === 'Docker' && <FaDocker className="ml-2 text-blue-400 inline-block" />}
+                                                    
+                            </span>
                         ))}
                     </div>
                 </div>
@@ -217,7 +244,22 @@ const CardView = ({ project, onSeeMore, index }) => {
             <p className="text-sm mb-3 text-gray-300">{description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
                 {technologies.map((tech, i) => (
-                    <span key={i} className="bg-blue-900 px-2 py-1 text-xs rounded-full">{tech}</span>
+                    <span key={i} className="bg-blue-900 px-2 py-1 text-xs rounded-full">{tech}
+                                                {/* Show icons based on technology */}
+                                                {tech === 'React' && <FaReact className="ml-2 text-blue-400 inline-block" />}
+                                                {tech === 'Firebase' && <FaFire className="ml-2 text-red-400 inline-block" />}
+                                                {tech === 'Node.js' && <FaNodeJs className="ml-2 text-green-400 inline-block" />}
+                                                {tech === 'Express.js' && <SiExpress className="ml-2 inline-block" />}
+                                                {tech === 'HTML' && <FaHtml5 className="ml-2 inline-block" />}
+                                                {tech === 'CSS' && <FaCss3Alt className="ml-2 inline-block" />}
+                                                {tech === 'Next.js' && <SiNextdotjs className="ml-2 inline-block" />}
+                                                {tech === 'MongoDB' && <SiMongodb className="ml-2 text-green-600 inline-block" />}
+                                                {tech === 'Tailwind CSS' && <TbBrandTailwind className="ml-2 text-cyan-400 inline-block" />}
+                                                {tech === 'Next.js' && <RiNextjsFill className="ml-2 text-white inline-block" />}
+                                                {tech === 'JavaScript' && <SiJavascript className="ml-2 text-yellow-400 inline-block" />}
+                                                {tech === 'TypeScript' && <SiTypescript className="ml-2 text-blue-600 inline-block" />}
+                                                {tech === 'Docker' && <FaDocker className="ml-2 text-blue-400 inline-block" />}                                
+                    </span>
                 ))}
             </div>
             <ProjectLinks clientCode={clientCode} serverCode={serverCode} liveLink={liveLink} onSeeMore={onSeeMore} />
