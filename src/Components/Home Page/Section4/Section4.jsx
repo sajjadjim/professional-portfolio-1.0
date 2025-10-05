@@ -28,6 +28,9 @@ const pages = [
         <li>Next.js</li>
         <li>HTML</li>
         <li>CSS</li>
+        <li>daisyUI</li>
+        <li>Material UI</li>
+        <li>ShadCDN</li>
       </ul>
     `,
   },
@@ -54,6 +57,20 @@ const pages = [
       <ul class="md:list-disc list-none flex gap-5 list-inside mt-2">
         <li>JWT</li>
         <li>Firebase Auth</li>
+      </ul>
+    `,
+  },
+      {
+    id: 5,
+    bg: '',
+    title: 'Designing',
+    text: `
+      <ul class="md:list-disc list-none flex gap-5 list-inside mt-2">
+        <li>Figma</li>
+        <li>Lucidchart</li>
+        <li>InVision</li>
+        <li>Adobe XD</li>
+        <li>Sketch</li>
       </ul>
     `,
   },

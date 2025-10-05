@@ -15,7 +15,7 @@ const keywords = [
     "React", "Node.js", "Express.js", "Next.js", "C", "C++", "JavaScript", "Python",
     "TypeScript", "React Testing Library", "HTML", "CSS", "Firebase",
     "JWT", "Git", "GitHub", "C#", "MongoDB", "MySQL", "RESTful APIs",
-    "Tailwind CSS", "Bootstrap", "Material UI", "Framer Motion", "Redux", "Socket.IO",
+    "Tailwind CSS", "Bootstrap", "Material UI", "Electron.js", "Framer Motion", "Redux", "Socket.IO", "Django",
 ];
 
 export default function Section1() {

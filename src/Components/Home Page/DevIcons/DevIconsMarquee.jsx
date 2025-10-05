@@ -5,12 +5,15 @@ import {
 } from "react-icons/fa";
 import {
   SiFirebase, SiCplusplus, SiC, SiMongodb, SiExpress,
-  SiJavascript, SiVite, SiGit, SiDocker, SiRedux, SiNextdotjs, SiTypescript,
+  SiJavascript, SiVite, SiGit, SiDocker, SiRedux, SiNextdotjs, SiTypescript,SiElectron,
 } from "react-icons/si";
+import { PiFileSqlLight } from "react-icons/pi";
+
 
 const ICONS = [
   { Icon: FaReact, color: "#61DAFB", name: "React" },
   { Icon: SiMongodb, color: "#47A248", name: "MongoDB" },
+  { Icon: PiFileSqlLight, color: "#003B57", name: "MySQL" },
   { Icon: FaGithub, color: "#FFFFFF", name: "GitHub" },
   { Icon: SiExpress, color: "#EAEAEA", name: "Express.js" },
   { Icon: FaNodeJs, color: "#68A063", name: "Node.js" },
@@ -25,6 +28,9 @@ const ICONS = [
   { Icon: SiRedux, color: "#764ABC", name: "Redux" },
   { Icon: SiNextdotjs, color: "#EAEAEA", name: "Next.js" },
   { Icon: SiTypescript, color: "#3178C6", name: "TypeScript" },
+  { Icon: SiFirebase, color: "#FFCA28", name: "Firebase" },
+  { Icon: SiElectron, color: "#47848F", name: "Electron.js" },
+  
 ];
 
 const bob = { y: [0, -6, 0], rotate: [0, 1.2, 0] };
