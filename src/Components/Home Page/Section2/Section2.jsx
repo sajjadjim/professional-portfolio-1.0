@@ -21,7 +21,7 @@ const Section2 = () => {
     fetchProjects();
   }, []);
 
-  console.log("Length of project data:", projectCount);
+  // console.log("Length of project data:", projectCount);
 
 
   useEffect(() => {
@@ -99,7 +99,7 @@ const Section2 = () => {
               {(() => {
                 const [exp, setExp] = React.useState(0);
                 React.useEffect(() => {
-                  const start = new Date('2023-01-01');
+                  const start = new Date('2022-07-01');
                   const now = new Date();
                   const diff = now - start;
                   const years = diff / (1000 * 60 * 60 * 24 * 365.25);

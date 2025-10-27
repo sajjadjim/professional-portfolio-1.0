@@ -20,7 +20,7 @@ const keywords = [
 
 export default function Section1() {
     return (
-        <section className="relative 2xl:w-10/12 lg:w-11/12 mx-auto 2xl:py-30 lg:py-20 pt-15 flex items-center justify-center px-4 md:px-16  text-white overflow-hidden">
+        <section className="relative 2xl:w-10/12 mt-5 lg:w-11/12 mx-auto 2xl:py-30 lg:py-20 pt-15 flex items-center justify-center px-4 md:px-16  text-white overflow-hidden">
             {/* Floating keywords */}
             {keywords.map((text, index) => (
                 <span

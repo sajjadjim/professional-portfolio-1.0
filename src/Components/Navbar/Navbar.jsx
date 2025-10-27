@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { Menu, X, Home, Code, User, Mail, Sparkles, BookOpen } from 'lucide-react';
+import React from 'react';
+import { Home, Code, User, Mail, Sparkles, BookOpen } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
     { label: 'Home', to: '/', Icon: Home },
@@ -17,10 +15,6 @@ const Navbar = () => {
     { label: 'Fun Fact', to: '/fun-fact', Icon: Sparkles },
   ];
 
-  const handleLinkClick = () => {
-    if (window.innerWidth < 768) setIsOpen(false);
-  };
-
   const desktopNavVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: (i) => ({
@@ -30,26 +24,10 @@ const Navbar = () => {
     }),
   };
 
-  // icon reveal animation (used for both desktop & mobile)
-  const iconVariants = {
-    hide: { opacity: 0, x: -6 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.18 } },
-  };
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 shadow-md bg-gradient-to-br from-gray-900 to-gray-900/30 backdrop-blur-md">
-      <div className="lg:w-11/12 2xl:w-10/12 mx-auto w-full flex justify-between items-center py-3 md:py-4 px-4">
-        <motion.div
-          className="2xl:text-3xl text-2xl font-bold cursor-pointer text-white"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Link to='/'>Sajjad <span className="text-[#33A1E0]">JIM.</span></Link>
-        </motion.div>
-
-        {/* Desktop nav */}
-        <ul className="hidden md:flex gap-8">
+    <nav className="fixed top-5  left-0 right-0 z-50 flex justify-center">
+      <div className="bg-[#0b1120]/70 backdrop-blur-md border-3 border-[#33A1E0] rounded-full shadow-lg px-6 py-2 flex items-center gap-6 md:gap-8">
+        <ul className="flex items-center gap-6 md:gap-8">
           {navItems.map(({ label, to, Icon }, i) => {
             const isActive = location.pathname === to;
             return (
@@ -62,77 +40,21 @@ const Navbar = () => {
               >
                 <Link
                   to={to}
-                  className={`group flex items-center gap-1 transition relative font-medium 
-                    ${isActive ? 'text-[#33A1E0]' : 'text-white hover:text-[#33A1E0]'}`}
+                  className={`group flex items-center justify-center gap-2 transition font-medium px-3 py-1.5 rounded-full
+                    ${isActive
+                      ? 'bg-gradient-to-r from-cyan-600 to-blue-700 text-white'
+                      : 'text-gray-200 hover:text-white hover:bg-gradient-to-r from-cyan-600/50 to-blue-700/50'
+                    }`}
                 >
-                  {label}
-                  {/* icon: absolute on desktop, animates in on hover, visible when active */}
-                  <motion.span
-                    variants={iconVariants}
-                    initial="hide"
-                    animate={isActive ? 'show' : 'hide'}
-                    whileHover="show"
-                    className={`md:absolute md:right-[-20px] md:ml-0 ml-2 inline-flex items-center
-                      ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                    aria-hidden="true"
-                  >
-                    <Icon size={16} className="stroke-current" />
-                  </motion.span>
+                  <Icon size={20} />
+                  {/* Text hidden on small screens */}
+                  <span className="hidden md:inline">{label}</span>
                 </Link>
               </motion.li>
             );
           })}
         </ul>
-
-        {/* Burger */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} aria-label="Toggle menu" className="text-white">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
       </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden items-center text-center justify-center grid "
-          >
-            <ul className="px-4 pb-4 shadow-md font-medium space-y-3">
-              {navItems.map(({ label, to, Icon }) => {
-                const isActive = location.pathname === to;
-                return (
-                  <Link
-                    key={label}
-                    to={to}
-                    onClick={handleLinkClick}
-                    className={`group flex items-center justify-center gap-2 transition relative font-medium 
-                      ${isActive ? 'text-[#33A1E0]' : 'text-white hover:text-[#33A1E0]'}`}
-                  >
-                    {/* icon inline on mobile so it's never clipped; shows when active, or on hover */}
-                    <motion.span
-                      variants={iconVariants}
-                      initial="hide"
-                      animate={isActive ? 'show' : 'hide'}
-                      whileHover="show"
-                      className={`${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                      aria-hidden="true"
-                    >
-                      <Icon size={16} className="stroke-current" />
-                    </motion.span>
-                    {label}
-                  </Link>
-                );
-              })}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };
