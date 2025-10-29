@@ -100,12 +100,12 @@ export default function Section1() {
                 {/* Profile Picture */}
                 <div className="relative group w-72 h-96 md:w-80 2xl:h-[320px] lg:h-[280px] overflow-hidden rounded-2xl shadow-lg">
                     <img
-                        src="https://github.com/sajjadjim/sajjadjim/blob/main/images/My_Picture1.JPG?raw=true"
+                        src="/images/My_Picture1.jpg"
                         alt="Profile"
                         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                     />
                     <img
-                        src="https://github.com/sajjadjim/sajjadjim/blob/main/images/My_Picture2.jpg?raw=true"
+                        src="/images/My_Picture2.jpg"
                         alt="Profile Hover"
                         className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     />

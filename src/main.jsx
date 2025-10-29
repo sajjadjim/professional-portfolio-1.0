@@ -5,28 +5,37 @@ import router from './Router/Router.jsx';
 import { RouterProvider } from 'react-router';
 import { motion } from 'framer-motion';
 
-// SplashScreen component
+// ✅ Splash Screen Component
 const SplashScreen = ({ onFinish }) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      onFinish();
-    }, 3000); // total animation duration
+    const playMacbookSound = () => {
+      const audio = new Audio('image_and_sound/macbook-startup-sound.mp3');
+      audio.volume = 1.0;
+      audio.play()
+        .then(() => console.log('✅ MacBook sound playing...'))
+        .catch((err) => console.warn('⚠️ Autoplay blocked by browser:', err));
+
+      setTimeout(onFinish, 2000);
+    };
+
+    // Slight delay before sound
+    const timer = setTimeout(playMacbookSound, 200);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
   return (
     <div className="splash-screen">
-      {/* Apple logo */}
-      <h1 className="splash-text">Welcome to Sajjad Jim's Portfolio</h1>
+      <h1 className="splash-text">Welcome to Sajjad Jim&apos;s Portfolio</h1>
+
+      {/* Apple Logo Animation */}
       <img
-        src="../src/assets/applel-logo.jpg" // replace with your logo path
+        src="image_and_sound/applel-logo.jpg"
         alt="Apple Logo"
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
         className="splash-logo"
+        as={motion.img}
       />
-      {/* Loading bar */}
+
+      {/* Loading Bar */}
       <div className="loading-bar-container">
         <motion.div
           className="loading-bar"
@@ -39,13 +48,12 @@ const SplashScreen = ({ onFinish }) => {
   );
 };
 
-// Root app
+// ✅ Root App
 const RootApp = () => {
   const [showSplash, setShowSplash] = useState(false);
 
-  // Detect desktop screen
   useEffect(() => {
-    if (window.innerWidth >= 1024) { // desktop
+    if (window.innerWidth >= 1024) {
       setShowSplash(true);
     }
   }, []);
@@ -57,7 +65,7 @@ const RootApp = () => {
   );
 };
 
-// Render
+// ✅ Render
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RootApp />
