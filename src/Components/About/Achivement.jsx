@@ -1,5 +1,6 @@
 import React from 'react';
 import NDA from '../../assets/Achivement/NDA_Certificate.png';
+import web_certificate from '../../assets/Achivement/web_development.png';
 import selfEstimate from '../../assets/Achivement/self_Estimate.png';
 import Spoken from '../../assets/Achivement/spoken_English.png';
 import Ai_Power from '../../assets/Achivement/Ai_Using.png';
@@ -21,6 +22,27 @@ const Achievement = () => {
             {/* Flex container for cards; horizontal scroll on small, wrap on large */}
             <div className='flex gap-6 min-w-[600px] sm:min-w-full lg:flex-wrap lg:min-w-0 lg:justify-center'>
 
+               {/* Card 0 */}
+              <div className="min-w-[250px] max-w-xs flex-shrink-0 relative group rounded-md shadow-md overflow-hidden">
+                <img
+                  src={web_certificate}
+                  alt="Self-esteem & Be you"
+                  className="object-cover object-center w-full h-72 rounded-md transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="transform translate-y-10 group-hover:translate-y-0 transition-all duration-500 ease-in-out text-center px-3">
+                    <p className="text-lg font-semibold mb-2">Web Development Course</p>
+                    <a
+                      href="https://drive.google.com/drive/folders/1MsekKEFZSOzr6RHc-bLSvIitGtVw_NME"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-sm cursor-pointer"
+                    >
+                      View
+                    </a>
+                  </div>
+                </div>
+              </div>
               {/* Card 1 */}
               <div className="min-w-[250px] max-w-xs flex-shrink-0 relative group rounded-md shadow-md overflow-hidden">
                 <img
